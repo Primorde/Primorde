@@ -1,0 +1,199 @@
+/* =====================================================
+   RESET GLOBAL
+===================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+	display: block;
+}
+
+/* Classe padrão de acessibilidade - O Google entende isso como 'Texto Auxiliar' */
+.sr-only {
+	position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+	font-size: 16px;
+}
+
+
+/* =====================================================
+   HEADER (estrutura fixa)
+===================================================== */
+header {
+    width: 100%;
+    display: flex;
+    border-top: .5vw solid white;
+    border-bottom: .1vw solid #e9e9f9;
+}
+
+/* Logo - largura controlada via JS */
+.header_logotipo img {
+    margin-left: 2vw;
+}
+
+/* Botões */
+.header_btn_whatszappp img,
+.header_btn_localizacao img {
+    cursor: pointer;
+}
+
+.header_btn_localizacao img {
+    margin-left: 1vw;
+    margin-right: .5vw;
+}
+
+
+/* =====================================================
+   SECTION BANNER TOP
+===================================================== */
+.section_banner_top {
+    display: flex;
+    flex-direction: column;
+    background: black;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+/* Estrutural */
+.section_banner_top img {
+    margin-left: 5vw;
+}
+
+/* Controlado via JS */
+.banner_top,
+.banner_servicos {
+    display: none;
+}
+
+.banner_slogan {
+    margin-left: 5vw;
+}
+
+
+/* =====================================================
+   BARRA TOP SERVIÇOS
+===================================================== */
+.barra_top_servicos {
+    padding-left: 5%;
+    background: black;
+    margin-top: 1vw;
+}
+
+/* Estrutural apenas */
+.barra_top_servicos img {
+    width: 100%;
+}
+
+
+/* =====================================================
+   SECTION DESCRIÇÃO
+===================================================== */
+.section_descricao img {
+    width: 90%;
+    margin-left: 5%;
+}
+
+
+/* =====================================================
+   TÍTULOS E SERVIÇOS
+===================================================== */
+.titulo_section_catalogo img,
+.titulo_section_servicos img,
+.section_servicos img {
+    width: 90%;
+    margin-left: 5%;
+}
+
+
+/* =====================================================
+   SECTION CATÁLOGOS (estrutura)
+===================================================== */
+.section_catalogos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 88%;
+    margin-left: 6%;
+}
+
+/* Largura dinâmica via JS */
+.section_catalogos img {
+    cursor: pointer;
+    margin-bottom: 2vw; /* Mantido porque JS não altera isso */
+}
+
+/* Classes usadas pelo JS para espaçamento */
+.mg_direita {}
+.mg_centro {}
+.mg_esquerda {}
+
+
+/* =====================================================
+   SECTION GOOGLE MAPS (estrutura base)
+===================================================== */
+.section_google_maps {
+    display: flex;
+    flex-wrap: wrap;
+    background: #eaeaeb;
+}
+
+/* JS controla width, padding e margin */
+.section_google_maps div{
+	width: 40%;
+	margin: 0 2.5% 0% 2.5%;
+	padding: 2vw 0 3vw 0;
+	
+}
+
+.section_google_maps div .descricao_google_maps{
+	width: 100%;
+}
+
+.section_google_maps div .btn_google_maps{
+	width: 42%;
+	margin-left: 58%;
+	cursor: pointer;
+}
+
+.section_google_maps iframe{
+	width: 55%;
+	border:0;	
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+footer {
+    display: flex;
+    justify-content: space-between;
+    background: black;
+}
+
+.logo_rodape {
+    margin-left: 5%;
+}
+
+/* width controlado via JS */
+.logo_rodape img {}
+
+.redes_sociais {
+    display: flex;
+    margin-right: 5%;
+}
+
+/* height controlado via JS */
+.redes_sociais img {
+    cursor: pointer;
+}
