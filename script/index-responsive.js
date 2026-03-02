@@ -1,7 +1,11 @@
 // =====================================================
 // EXECUTA QUANDO O DOM ESTIVER PRONTO
 // =====================================================
+
+
 $(document).ready(function () {
+
+	alert("ok1");
 
     // -------------------------------
     // Função Debounce
@@ -40,7 +44,7 @@ $(window).on("load", function () {
         // Aplica gradiente no banner principal
         $(".section_banner_top").css(
             "background-image",
-            "linear-gradient(to right, rgba(0,0,0,0.95) 35%, rgba(99,99,99,0.15)), url('style/img/section/banner_top/fundo_banner_top.png')"
+            "linear-gradient(to right, rgba(0,0,0,0.95) 35%, rgba(99,99,99,0.15)), url('style/img/section/banner_top/fundo_banner_top_1.jpg')"
         );
 
         // Mostra banners com fade suave
@@ -286,3 +290,4 @@ function aplicarLarguras(imgWidth, bannerWidth, barraWidth) {
     $(".barra_top_servicos").css("width", barraWidth);
 
 }
+
