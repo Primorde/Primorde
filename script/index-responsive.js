@@ -75,11 +75,11 @@ function setWidthElements() {
         widthWindow >= 950 ? "13%" :
         widthWindow >= 850 ? "14%" :
         widthWindow >= 750 ? "16%" :
-        widthWindow >= 650 ? "18%" :
-        widthWindow >= 600 ? "22%" :
-        widthWindow >= 500 ? "28%" :
-        widthWindow >= 400 ? "30%" :
-        "32%";
+        widthWindow >= 650 ? "20%" :
+        widthWindow >= 600 ? "25%" :
+        widthWindow >= 500 ? "30%" :
+        widthWindow >= 400 ? "35%" :
+        "40%";
 
     $logo.css("width", logoWidth);
 
@@ -91,10 +91,10 @@ function setWidthElements() {
 
         trocarImagensMobile();
 
-        ajustarCatalogoMobile($catalogos, "45%", "70vw", "85%");
+        ajustarCatalogoMobile($catalogos, "45%", "85vw", "95%");
         ajustarGoogleMapsMobile();
 
-        $logoRodape.css("width", "22vw");
+        $logoRodape.css("width", "30vw");
     }
 
     // =====================================================
@@ -290,4 +290,5 @@ function aplicarLarguras(imgWidth, bannerWidth, barraWidth) {
     $(".barra_top_servicos").css("width", barraWidth);
 
 }
+
 
