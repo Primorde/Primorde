@@ -66,16 +66,16 @@ function setWidthElements() {
     // AJUSTE PROGRESSIVO DO TAMANHO DO LOGO
     // -------------------------------------------------
     const logoWidth =
-        widthWindow >= 1150 ? "11%" :
+        widthWindow >= 1150 ? "10%" :
         widthWindow >= 1050 ? "12%" :
         widthWindow >= 950 ? "13%" :
         widthWindow >= 850 ? "14%" :
-        widthWindow >= 750 ? "15%" :
-        widthWindow >= 650 ? "16%" :
-        widthWindow >= 600 ? "17%" :
-        widthWindow >= 500 ? "18%" :
-        widthWindow >= 400 ? "19%" :
-        "20%";
+        widthWindow >= 750 ? "16%" :
+        widthWindow >= 650 ? "18%" :
+        widthWindow >= 600 ? "22%" :
+        widthWindow >= 500 ? "28%" :
+        widthWindow >= 400 ? "30%" :
+        "32%";
 
     $logo.css("width", logoWidth);
 
@@ -284,4 +284,5 @@ function aplicarLarguras(imgWidth, bannerWidth, barraWidth) {
     $(".section_catalogos img").css("width", imgWidth);
     $(".banner_top, .banner_slogan").css("width", bannerWidth);
     $(".barra_top_servicos").css("width", barraWidth);
+
 }
