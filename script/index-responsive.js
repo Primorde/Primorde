@@ -5,8 +5,6 @@
 
 $(document).ready(function () {
 
-	alert("ok1");
-
     // -------------------------------
     // Função Debounce
     // Evita múltiplas execuções no resize
@@ -78,8 +76,8 @@ function setWidthElements() {
         widthWindow >= 650 ? "20%" :
         widthWindow >= 600 ? "25%" :
         widthWindow >= 500 ? "30%" :
-        widthWindow >= 400 ? "35%" :
-        "40%";
+        widthWindow >= 400 ? "40%" :
+        "50%";
 
     $logo.css("width", logoWidth);
 
@@ -91,7 +89,7 @@ function setWidthElements() {
 
         trocarImagensMobile();
 
-        ajustarCatalogoMobile($catalogos, "45%", "85vw", "95%");
+        ajustarCatalogoMobile($catalogos, "45%", "90vw", "95%");
         ajustarGoogleMapsMobile();
 
         $logoRodape.css("width", "30vw");
@@ -290,5 +288,6 @@ function aplicarLarguras(imgWidth, bannerWidth, barraWidth) {
     $(".barra_top_servicos").css("width", barraWidth);
 
 }
+
 
 
