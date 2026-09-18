@@ -1,0 +1,467 @@
+/* =========================================================
+RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-user-drag: none;
+  }
+
+  
+img {
+display: block;
+transition: transform .3s ease; 
+}
+
+body {
+mbackground: #f5f5f9;
+}
+
+/* =========================================================
+SCROLL
+========================================================= */
+
+body *::-webkit-scrollbar {
+height: 5px;
+}
+
+body *::-webkit-scrollbar-track {
+background: rgba(50, 50, 50, .15);
+background: white;
+border-radius: 10px;
+}
+
+body *::-webkit-scrollbar-thumb {
+background: rgba(0, 0, 0, .4);
+border-radius: 10px;
+}
+
+/* =========================================================
+UTILITÁRIOS
+========================================================= */
+
+/* Carrossel padrão */
+
+.flex-scroll {
+display: flex;
+flex-wrap: nowrap;
+overflow-x: auto;
+scroll-behavior: smooth;
+}
+
+/* Cards */
+
+.card-img {
+width: 21.75%;
+box-shadow: 0 .5px 5px rgba(1, 1, 1, .1);
+border: 1px solid rgba(1, 1, 1, .15);
+margin-top: 2vw;
+margin-bottom: 3vw;
+cursor: pointer !important;
+}
+
+
+.card-img:hover {
+filter: brightness(40%) grayscale(100%);
+}
+
+/* Espaçamentos dos cards */
+
+.mg_left {
+margin-left: 2%;
+margin-right: .5%;
+}
+
+.mg_center {
+margin-left: 2%;
+margin-right: 2%;
+}
+
+.mg_right {
+margin-left: .5%;
+margin-right: 2%;
+}
+
+/* Estado oculto */
+
+.hidden {
+display: none !important;
+}
+
+/* =========================================================
+HEADER
+========================================================= */
+
+header {
+background-size: cover;
+}
+
+/* Cabeçalho fixo */
+
+header .cabecalho {
+display: flex;
+justify-content: space-between;
+flex-wrap: nowrap;
+padding: 0 2%;
+background: #f5f5f5;
+vbackground: #f9f9f9;
+border-bottom: 1px solid rgb(200, 200, 200);
+position: fixed;
+width: 100%;
+top: 0;
+
+position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+header .logotipo img {
+width: 45%;
+cursor: text;
+}
+
+header .cabecalho_action {
+width: 50%;
+display: flex;
+justify-content: flex-end;
+}
+
+/* Botões do cabeçalho */
+
+header .btn_whatszapp img,
+header .btn_localizacao img {
+cursor: pointer;
+}
+
+header .btn_whatszapp img:hover,
+header .btn_localizacao img:hover {
+transform: scale(.95);
+}
+
+header .btn_localizacao {
+margin-left: 2%;
+}
+
+/* =========================================================
+BANNER
+========================================================= */
+
+header .banner_top {
+margin-left: 6%;
+padding: 4vw 0 5vw;
+}
+
+header .titulo_header img {
+width: 45%;
+cursor: text;
+}
+
+header .slogan_header img {
+width: 47%;
+margin-left: 5px;
+cursor: text;
+}
+
+header .banner_actions_header {
+display: flex;
+margin-top: .5vw;
+}
+
+/* Botões do banner */
+
+header .btn_solicitar_orcamento_header,
+header .btn_galeria_header {
+width: 21%;
+cursor: pointer;
+}
+
+header .btn_solicitar_orcamento_header img,
+header .btn_galeria_header img {
+width: 100%;
+cursor: pointer;
+}
+
+header .btn_solicitar_orcamento_header img:hover,
+header .btn_galeria_header img:hover {
+transform: scale(.97);
+}
+
+header .btn_solicitar_orcamento_header img {
+background: #fff;
+}
+
+header .btn_galeria_header img {
+background: #000;
+}
+
+header .btn_galeria_header {
+margin-left: 1%;
+}
+
+/* =========================================================
+MAIN
+========================================================= */
+
+main {
+width: 95%;
+margin-left: 2.5%;
+}
+
+/* =========================================================
+CARROSSEL DE SERVIÇOS DO HEADER
+========================================================= */
+
+.container_servicos {
+width: 100%;
+overflow: hidden;
+background: #fff;
+zbackground: #f5f5f9;
+}
+
+.carrocel_servicos {
+margin-left: .4%;
+margin-top: 1.5vw;
+}
+
+.carrocel_servicos img {
+width: 10vw;
+margin: 1.8vw 2vw 1.8vw 0;
+flex-shrink: 0;
+cursor: pointer;
+}
+
+.carrocel_servicos img:hover {
+transform: scale(.9);
+}
+
+/* =========================================================
+SERVIÇOS
+========================================================= */
+
+.section_servicos {
+margin-top: 5vw;
+}
+
+.section_servicos .titulo_servicos img,
+.section_produtos .titulo_produtos img,
+.section_atendimento .titulo_atendimento img,
+.section_avaliacao .titulo_avaliacao img,
+.section_redes_sociais .titulo_redes_sociais img {
+width: 52%;
+cursor: text;
+}
+
+/* Título */
+
+.section_servicos .titulo_servicos img {
+margin: 4vw 0 0 6%;
+}
+
+/* Catálogo */
+
+.section_servicos .catalogo_servicos {
+width: 88%;
+margin-left: 6%;
+}
+
+/* Texto */
+
+.section_servicos .texto_servicos img {
+width: 88%;
+margin: 4vw 0 0 6%;
+cursor: text;
+}
+
+/* =========================================================
+PRODUTOS
+========================================================= */
+
+.section_produtos .titulo_produtos img {
+margin: 4vw 0 1vw 6%;
+}
+
+.carrossel_produtos {
+width: 88%;
+margin: 0 0 4vw 6%;
+}
+
+/* =========================================================
+ATENDIMENTO
+========================================================= */
+
+.section_atendimento {
+padding: 4vw 0 5vw;
+}
+
+.section_atendimento .titulo_atendimento img {
+margin-left: 6%;
+}
+
+.section_atendimento .bloco_atendimento {
+display: flex;
+flex-wrap: wrap;
+width: 88%;
+margin: 3vw 0 0 6%;
+}
+
+.section_atendimento .bloco1,
+.section_atendimento .bloco2 {
+width: 48%;
+}
+
+.section_atendimento .bloco2 {
+margin-left: 4%;
+}
+
+/* Texto */
+
+.section_atendimento .bloco2 .texto_atendimento img {
+width: 100%;
+cursor: text;
+}
+
+/* Mapa */
+
+.section_atendimento iframe {
+width: 100%;
+height: 100%;
+border: 0;
+border-radius: .2vw;
+box-shadow: 0 4px 10px rgba(1, 1, 1, .5);
+}
+
+.section_atendimento iframe:hover {
+box-shadow: 0 4px 10px rgba(1, 1, 1, .9);
+}
+
+/* Menu */
+
+.section_atendimento .menu_atendimento {
+display: flex;
+margin-top: 2vw;
+}
+
+.section_atendimento .menu_atendimento img {
+width: 100%;
+cursor: pointer;
+}
+
+.section_atendimento .menu_atendimento img:hover {
+transform: scale(.98);
+}
+
+.btn_solicitar_atendimento {
+margin-left: 3%;
+}
+
+/* =========================================================
+AVALIAÇÃO
+========================================================= */
+
+.section_avaliacao {
+padding-top: 4vw;
+margin-bottom: 5vw;
+}
+
+.section_avaliacao .titulo_avaliacao img {
+margin: 0 0 1vw 6%;
+}
+
+.catalogo_avaliacao {
+width: 88%;
+margin: 0 0 4vw 6%;
+}
+
+.section_avaliacao .texto_avaliacao img {
+width: 88%;
+margin: 4vw 0 0 6%;
+cursor: text;
+}
+
+/* Menu de avaliação */
+
+.menu_avaliacao {
+width: 88%;
+margin-left: 6%;
+display: flex;
+}
+
+.menu_avaliacao div {
+width: 33.3333%;
+margin-top: 3vw;
+}
+
+/* Botões */
+
+.menu_avaliacao .btn_avaliacao img,
+.menu_avaliacao .btn_voltar_ao_topo img {
+width: 97%;
+cursor: pointer;
+}
+
+.menu_avaliacao .btn_avaliacao img:hover,
+.menu_avaliacao .btn_voltar_ao_topo img:hover {
+transform: scale(.95);
+}
+
+.menu_avaliacao .btn_avaliacao img {
+margin-right: 3%;
+}
+
+.menu_avaliacao .btn_voltar_ao_topo img {
+margin-left: 3%;
+}
+
+/* Estrelas */
+
+.menu_avaliacao .estrelas_avaliacao {
+display: flex;
+justify-content: flex-end;
+}
+
+.estrelas_avaliacao img{
+cursor: default;
+}
+
+/* =========================================================
+REDES SOCIAIS
+========================================================= */
+
+.section_redes_sociais {
+padding-top: 4vw;
+margin-bottom: 5vw;
+}
+
+.section_redes_sociais .titulo_redes_sociais img {
+margin-left: 6%;
+}
+
+.catalogo_redes_sociais {
+width: 88%;
+margin: 0 0 4vw 6%;
+}
+
+/* =========================================================
+FOOTER
+========================================================= */
+
+footer {
+background: #000;
+width: 100%;
+}
+
+footer .copyright {
+width: 100%;
+padding: 1vw 0;
+}
+
+footer .copyright img {
+width: 50%;
+margin-left: 25%;
+cursor: text;
+}
