@@ -27,30 +27,30 @@ $(document).ready(function () {
         "img[src*='carrocel_servicos/manutencao.jpg'], img[data-src*='carrocel_servicos/manutencao.jpg']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20manuten%C3%A7%C3%A3o.",
 
         // --- CARDS DA SEÇÃO DE SERVIÇOS ---
-        "img[src*='section_servicos/Alvenaria.png'], img[data-src*='section_servicos/Alvenaria.png']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20alvenaria.",
-        "img[src*='section_servicos/Cobertura.png'], img[data-src*='section_servicos/Cobertura.png']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20cobertura.",
-        "img[src*='section_servicos/El%C3%A9trica.png'], img[data-src*='section_servicos/El%C3%A9trica.png']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20el%C3%A9trica.",
-        "img[src*='section_servicos/Hidr%C3%A1lica.png'], img[data-src*='section_servicos/Hidr%C3%A1lica.png']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20hidr%C3%A1ulica.",
-        "img[src*='section_servicos/Acabamento.png'], img[data-src*='section_servicos/Acabamento.png']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20acabamento.",
-        "img[src*='section_servicos/Projetos.png'], img[data-src*='section_servicos/Projetos.png']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20projetos.",
+        "img[src*='section_servicos/Alvenaria.webp'], img[data-src*='section_servicos/Alvenaria.webp']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20alvenaria.",
+        "img[src*='section_servicos/Cobertura.webp'], img[data-src*='section_servicos/Cobertura.webp']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20cobertura.",
+        "img[src*='section_servicos/El%C3%A9trica.webp'], img[data-src*='section_servicos/El%C3%A9trica.webp']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20el%C3%A9trica.",
+        "img[src*='section_servicos/Hidr%C3%A1lica.webp'], img[data-src*='section_servicos/Hidr%C3%A1lica.webp']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20hidr%C3%A1ulica.",
+        "img[src*='section_servicos/Acabamento.webp'], img[data-src*='section_servicos/Acabamento.webp']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20acabamento.",
+        "img[src*='section_servicos/Projetos.webp'], img[data-src*='section_servicos/Projetos.webp']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20projetos.",
 
         // --- CARDS DA SEÇÃO DE PRODUTOS ---
-        "img[src*='section_produtos/Motores para portões.png'], img[data-src*='section_produtos/Motores para portões.png']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20motores%20para%20port%C3%B5es.",
-        "img[src*='section_produtos/Intefones e vídeo porteiros.png'], img[data-src*='section_produtos/Intefones e vídeo porteiros.png']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20interfones%20e%20videoporteiros.",
-        "img[src*='section_produtos/Fechadura eletrônica.png'], img[data-src*='section_produtos/Fechadura eletrônica.png']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20fechaduras%20eletr%C3%B4nicas.",
-        "img[src*='section_produtos/Padrões de entrada.png'], img[data-src*='section_produtos/Padrões de entrada.png']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20padr%C3%B5es%20de%20entrada.",
-        "img[src*='section_produtos/Coifas.png'], img[data-src*='section_produtos/Coifas.png']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20coifas.",
-        "img[src*='section_produtos/Cooktops e fogões de indução.png'], img[data-src*='section_produtos/Cooktops e fogões de indução.png']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20cooktops%20e%20fog%C3%B5es%20de%20indu%C3%A7%C3%A3o.",
-        "img[src*='section_produtos/Caixa d´ água.png'], img[data-src*='section_produtos/Caixa d´ água.png']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20caixa%20d%27%C3%A1gua.",
-        "img[src*='section_produtos/Chuveiros Eletrônicos.png'], img[data-src*='section_produtos/Chuveiros Eletrônicos.png']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20chuveiros%20eletr%C3%B4nicos.",
-        "img[src*='section_produtos/Pressurizadores.png'], img[data-src*='section_produtos/Pressurizadores.png']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20pressurizadores.",
+        "img[src*='section_produtos/Motores para portões.webp'], img[data-src*='section_produtos/Motores para portões.webp']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20motores%20para%20port%C3%B5es.",
+        "img[src*='section_produtos/Intefones e vídeo porteiros.webp'], img[data-src*='section_produtos/Intefones e vídeo porteiros.webp']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20interfones%20e%20videoporteiros.",
+        "img[src*='section_produtos/Fechadura eletrônica.webp'], img[data-src*='section_produtos/Fechadura eletrônica.webp']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20fechaduras%20eletr%C3%B4nicas.",
+        "img[src*='section_produtos/Padrões de entrada.webp'], img[data-src*='section_produtos/Padrões de entrada.webp']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20padr%C3%B5es%20de%20entrada.",
+        "img[src*='section_produtos/Coifas.webp'], img[data-src*='section_produtos/Coifas.webp']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20coifas.",
+        "img[src*='section_produtos/Cooktops e fogões de indução.webp'], img[data-src*='section_produtos/Cooktops e fogões de indução.webp']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20cooktops%20e%20fog%C3%B5es%20de%20indu%C3%A7%C3%A3o.",
+        "img[src*='section_produtos/Caixa d´ água.webp'], img[data-src*='section_produtos/Caixa d´ água.webp']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20caixa%20d%27%C3%A1gua.",
+        "img[src*='section_produtos/Chuveiros Eletrônicos.webp'], img[data-src*='section_produtos/Chuveiros Eletrônicos.webp']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20chuveiros%20eletr%C3%B4nicos.",
+        "img[src*='section_produtos/Pressurizadores.webp'], img[data-src*='section_produtos/Pressurizadores.webp']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20pressurizadores.",
 
         // --- CARDS DE REDES SOCIAIS ---
-        "img[src*='1card_instagram.png'], img[data-src*='1card_instagram.png']": "https://www.instagram.com/primorde.oficial?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==",
-        "img[src*='2card_facebook.png'], img[data-src*='2card_facebook.png']": "https://www.facebook.com/share/1C5QmnoZG8/",
-        "img[src*='3card_whatszapp.png'], img[data-src*='3card_whatszapp.png']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os.",
-        "img[src*='4card_youtube.png'], img[data-src*='4card_youtube.png']": "https://youtube.com/@primordeoficial?si=xCAwoVU9ymet0MbU",
-        "img[src*='5card_tiktok.png'], img[data-src*='5card_tiktok.png']": "https://www.tiktok.com/@primorde.oficial?_r=1&_t=ZS-99bQ4WaaSUy"
+        "img[src*='1card_instagram.webp'], img[data-src*='1card_instagram.webp']": "https://www.instagram.com/primorde.oficial?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==",
+        "img[src*='2card_facebook.webp'], img[data-src*='2card_facebook.webp']": "https://www.facebook.com/share/1C5QmnoZG8/",
+        "img[src*='3card_whatszapp.webp'], img[data-src*='3card_whatszapp.webp']": "https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es.",
+        "img[src*='4card_youtube.webp'], img[data-src*='4card_youtube.webp']": "https://youtube.com/@primordeoficial?si=xCAwoVU9ymet0MbU",
+        "img[src*='5card_tiktok.webp'], img[data-src*='5card_tiktok.webp']": "https://www.tiktok.com/@primorde.oficial?_r=1&_t=ZS-99bQ4WaaSUy"
     };
 
     /* =========================================================
