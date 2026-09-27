@@ -699,7 +699,7 @@ $(window).on("load", function () {
 
             $(".banner_top").css(
                 "margin-left",
-                "6%"
+                "4%"
             );
         }
 
