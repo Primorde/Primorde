@@ -44,184 +44,186 @@ $(window).on("load", function () {
     };
 
 
-    const configuracoesDesktop = [
+const configuracoesDesktop = [
 
-        {
-            min: 1070,
+    {
+        min: 1070,
 
-            logotipoWidth: "30%",
+        logotipoWidth: "30%",
 
-            tituloBannerWidth: "45%",
-            tituloBannerFontSize: "49px",
+        tituloBannerWidth: "45%",
+        tituloBannerFontSize: "49px",
 
-            sloganWidth: "47%",
-            sloganFontSize: "16px",
+        sloganWidth: "47%",
+        sloganFontSize: "16px",
 
-            btnsBannerWidth: "20%",
-            btnsBannerMargin: "2.5%",
+        btnsBannerWidth: "20%",
+        btnsBannerMargin: "2.5%",
 
-            mainWidth: "95%",
-            mainMarginLeft: "2.5%",
+        mainWidth: "95%",
+        mainMarginLeft: "2.5%",
 
-            servicosWidth: "10vw",
-            titulosGeraisWidth: "52%",
-            carrosseisTextoWidth: "88%"
-        },
+        servicosWidth: "10vw",
+        titulosGeraisWidth: "52%",
+        carrosseisTextoWidth: "88%"
+    },
 
-        {
-            min: 975,
+    {
+        min: 975,
 
-            logotipoWidth: "33.11%",
+        logotipoWidth: "33.11%",
 
-            tituloBannerWidth: "49.53%",
-            tituloBannerFontSize: "48.29px",
+        tituloBannerWidth: "49.53%",
+        tituloBannerFontSize: "48.29px",
 
-            sloganWidth: "51.35%",
-            sloganFontSize: "15.73px",
+        sloganWidth: "51.35%",
+        sloganFontSize: "15.73px",
 
-            btnsBannerWidth: "22.04%",
-            btnsBannerMargin: "2.5%",
+        btnsBannerWidth: "22.04%",
+        btnsBannerMargin: "2.5%",
 
-            mainWidth: "95.44%",
-            mainMarginLeft: "2.28%",
+        mainWidth: "95.44%",
+        mainMarginLeft: "2.28%",
 
-            servicosWidth: "11.42vw",
-            titulosGeraisWidth: "55.82%",
-            carrosseisTextoWidth: "88.71%"
-        },
+        servicosWidth: "11.42vw",
+        titulosGeraisWidth: "55.82%",
+        carrosseisTextoWidth: "88.71%"
+    },
 
-        {
-            min: 880,
+    {
+        min: 880,
 
-            logotipoWidth: "36.21%",
+        logotipoWidth: "36.21%",
 
-            tituloBannerWidth: "54.06%",
-            tituloBannerFontSize: "47.58px",
+        tituloBannerWidth: "54.06%",
+        tituloBannerFontSize: "47.58px",
 
-            sloganWidth: "55.70%",
-            sloganFontSize: "15.47px",
+        sloganWidth: "55.70%",
+        sloganFontSize: "15.47px",
 
-            btnsBannerWidth: "24.08%",
-            btnsBannerMargin: "2.5%",
+        btnsBannerWidth: "24.08%",
+        btnsBannerMargin: "2.5%",
 
-            mainWidth: "95.89%",
-            mainMarginLeft: "2.06%",
+        mainWidth: "95.89%",
+        mainMarginLeft: "2.06%",
 
-            servicosWidth: "12.84vw",
-            titulosGeraisWidth: "59.64%",
-            carrosseisTextoWidth: "89.42%"
-        },
+        servicosWidth: "12.84vw",
+        titulosGeraisWidth: "59.64%",
+        carrosseisTextoWidth: "89.42%"
+    },
 
-        {
-            min: 785,
+    {
+        min: 785,
 
-            logotipoWidth: "39.32%",
+        logotipoWidth: "39.32%",
 
-            tituloBannerWidth: "58.58%",
-            tituloBannerFontSize: "46.87px",
+        tituloBannerWidth: "58.58%",
+        tituloBannerFontSize: "46.87px",
 
-            sloganWidth: "60.05%",
-            sloganFontSize: "15.20px",
+        sloganWidth: "60.05%",
+        sloganFontSize: "15.20px",
 
-            btnsBannerWidth: "26.13%",
-            btnsBannerMargin: "2.5%",
+        btnsBannerWidth: "26.13%",
+        btnsBannerMargin: "2.5%",
 
-            mainWidth: "96.33%",
-            mainMarginLeft: "1.83%",
+        mainWidth: "96.33%",
+        mainMarginLeft: "1.83%",
 
-            servicosWidth: "14.26vw",
-            titulosGeraisWidth: "63.45%",
-            carrosseisTextoWidth: "90.13%"
-        },
+        servicosWidth: "14.26vw",
+        titulosGeraisWidth: "63.45%",
+        carrosseisTextoWidth: "90.13%"
+    },
 
-        {
-            min: 690,
+    {
+        min: 690,
 
-            logotipoWidth: "42.43%",
+        logotipoWidth: "42.43%",
 
-            tituloBannerWidth: "63.11%",
-            tituloBannerFontSize: "46.16px",
+        tituloBannerWidth: "63.11%",
+        tituloBannerFontSize: "46.16px",
 
-            sloganWidth: "64.40%",
-            sloganFontSize: "14.93px",
+        sloganWidth: "64.40%",
+        sloganFontSize: "14.93px",
 
-            btnsBannerWidth: "28.17%",
-            btnsBannerMargin: "2.5%",
+        btnsBannerWidth: "28.17%",
+        btnsBannerMargin: "2.5%",
 
-            mainWidth: "96.78%",
-            mainMarginLeft: "1.61%",
+        mainWidth: "96.78%",
+        mainMarginLeft: "1.61%",
 
-            servicosWidth: "15.68vw",
-            titulosGeraisWidth: "67.27%",
-            carrosseisTextoWidth: "90.84%"
-        },
+        servicosWidth: "15.68vw",
+        titulosGeraisWidth: "67.27%",
+        carrosseisTextoWidth: "90.84%"
+    },
 
-        {
-            min: 595,
+    {
+        min: 595,
 
-            logotipoWidth: "45.54%",
+        logotipoWidth: "45.54%",
 
-            tituloBannerWidth: "67.64%",
-            tituloBannerFontSize: "45.45px",
+        tituloBannerWidth: "67.64%",
+        tituloBannerFontSize: "45.45px",
 
-            sloganWidth: "68.75%",
-            sloganFontSize: "14.67px",
+        sloganWidth: "68.75%",
+        sloganFontSize: "14.67px",
 
-            btnsBannerWidth: "30.21%",
-            btnsBannerMargin: "2.5%",
+        btnsBannerWidth: "30.21%",
+        btnsBannerMargin: "2.5%",
 
-            mainWidth: "97.22%",
-            mainMarginLeft: "1.39%",
+        mainWidth: "97.22%",
+        mainMarginLeft: "1.39%",
 
-            servicosWidth: "17.10vw",
-            titulosGeraisWidth: "71.09%",
-            carrosseisTextoWidth: "91.55%"
-        },
+        servicosWidth: "17.10vw",
+        titulosGeraisWidth: "71.09%",
+        carrosseisTextoWidth: "91.55%"
+    },
 
-        {
-            min: 500,
+    {
+        min: 500,
 
-            logotipoWidth: "48.64%",
+        logotipoWidth: "48.64%",
 
-            tituloBannerWidth: "72.17%",
-            tituloBannerFontSize: "44.74px",
+        tituloBannerWidth: "72.17%",
+        tituloBannerFontSize: "44.74px",
 
-            sloganWidth: "73.10%",
-            sloganFontSize: "14.40px",
+        sloganWidth: "73.10%",
+        sloganFontSize: "14.40px",
 
-            btnsBannerWidth: "32.25%",
-            btnsBannerMargin: "2.5%",
+        btnsBannerWidth: "32.25%",
+        btnsBannerMargin: "2.5%",
 
-            mainWidth: "97.66%",
-            mainMarginLeft: "1.17%",
+        mainWidth: "97.66%",
+        mainMarginLeft: "1.17%",
 
-            servicosWidth: "18.52vw",
-            titulosGeraisWidth: "74.91%",
-            carrosseisTextoWidth: "92.26%"
-        },
+        servicosWidth: "18.52vw",
+        titulosGeraisWidth: "74.91%",
+        carrosseisTextoWidth: "92.26%"
+    },
 
-        {
-            min: 0,
+    {
+        min: 0,
 
-            logotipoWidth: "65%",
+        logotipoWidth: "65%",
 
-            tituloBannerWidth: "96%",
-            tituloBannerFontSize: "clamp(35px, 8.7vw, 41px)",
+        tituloBannerWidth: "96%",
+        tituloBannerFontSize: "clamp(35px, 8.7vw, 41px)",
 
-            sloganWidth: "96%",
-            sloganFontSize: "clamp(11px, 2.9vw, 13px)",
+        sloganWidth: "96%",
+        sloganFontSize: "clamp(11px, 2.9vw, 13px)",
 
-            btnsBannerWidth: "43%",
-            btnsBannerMargin: "2.5%",
+        btnsBannerWidth: "43%",
+        btnsBannerMargin: "2.5%",
 
-            mainWidth: "100%",
-            mainMarginLeft: "0%",
+        mainWidth: "100%",
+        mainMarginLeft: "0%",
 
-            servicosWidth: "20vw",
-            titulosGeraisWidth: "95%",
-            carrosseisTextoWidth: "96%"
-        }
-    ];
+        servicosWidth: "26vw",
+        titulosGeraisWidth: "95%",
+        carrosseisTextoWidth: "96%"
+    }
+];
+
+
 
 
     function aplicarConfiguracoes(config) {
