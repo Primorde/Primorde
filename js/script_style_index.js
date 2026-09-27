@@ -203,7 +203,7 @@ const configuracoesDesktop = [
     {
         min: 0,
 
-        logotipoWidth: "65%",
+        logotipoWidth: "85%",
 
         tituloBannerWidth: "96%",
         tituloBannerFontSize: "clamp(35px, 8.7vw, 41px)",
