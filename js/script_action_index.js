@@ -71,7 +71,7 @@ $(document).ready(function () {
     ========================================================= */
         $(".btn_voltar_ao_topo").css("cursor", "pointer").on("click", function (e) {
             e.preventDefault();
-            $("html, body").animate({ scrollTop: 0 }, 2500);
+            $("html, body").animate({ scrollTop: 0 }, 1500);
         });
 
 
