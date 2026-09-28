@@ -44,7 +44,7 @@ $(window).on("load", function () {
     };
 
 
-const configuracoesDesktop = [
+const configuracoesResponsivas = [
 
     {
         min: 1070,
@@ -991,7 +991,7 @@ const configuracoesDesktop = [
 
 
         const config =
-            configuracoesDesktop.find(
+            configuracoesResponsivas.find(
                 configuracao =>
                     tela >= configuracao.min
             );
