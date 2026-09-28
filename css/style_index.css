@@ -157,7 +157,6 @@
         width: 45%;
         height: auto;
         cursor: text;
-        transform: translateY(-4px);
     }
 
     header .cabecalho_action {
