@@ -64,7 +64,6 @@ const configuracoesDesktop = [
         mainMarginLeft: "2.5%",
 
         servicosWidth: "10vw",
-        titulosGeraisWidth: "52%",
         carrosseisTextoWidth: "88%"
     },
 
@@ -86,7 +85,6 @@ const configuracoesDesktop = [
         mainMarginLeft: "2.28%",
 
         servicosWidth: "11.42vw",
-        titulosGeraisWidth: "55.82%",
         carrosseisTextoWidth: "88.71%"
     },
 
@@ -108,7 +106,6 @@ const configuracoesDesktop = [
         mainMarginLeft: "2.06%",
 
         servicosWidth: "12.84vw",
-        titulosGeraisWidth: "59.64%",
         carrosseisTextoWidth: "89.42%"
     },
 
@@ -130,7 +127,6 @@ const configuracoesDesktop = [
         mainMarginLeft: "1.83%",
 
         servicosWidth: "14.26vw",
-        titulosGeraisWidth: "63.45%",
         carrosseisTextoWidth: "90.13%"
     },
 
@@ -152,7 +148,6 @@ const configuracoesDesktop = [
         mainMarginLeft: "1.61%",
 
         servicosWidth: "15.68vw",
-        titulosGeraisWidth: "67.27%",
         carrosseisTextoWidth: "90.84%"
     },
 
@@ -174,7 +169,6 @@ const configuracoesDesktop = [
         mainMarginLeft: "1.39%",
 
         servicosWidth: "17.10vw",
-        titulosGeraisWidth: "71.09%",
         carrosseisTextoWidth: "91.55%"
     },
 
@@ -196,7 +190,6 @@ const configuracoesDesktop = [
         mainMarginLeft: "1.17%",
 
         servicosWidth: "18.52vw",
-        titulosGeraisWidth: "74.91%",
         carrosseisTextoWidth: "92.26%"
     },
 
@@ -218,7 +211,6 @@ const configuracoesDesktop = [
         mainMarginLeft: "0%",
 
         servicosWidth: "28vw",
-        titulosGeraisWidth: "95%",
         carrosseisTextoWidth: "96%"
     }
 ];
