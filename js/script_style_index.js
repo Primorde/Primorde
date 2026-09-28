@@ -896,11 +896,6 @@ const configuracoesResponsivas = [
                 height: alturaCabecalho
             });
 
-            elementos.logotipo.css(
-                "margin-top",
-                "7.5px"
-            );
-
             elementos.estrelas.css({
                 height:
                     elementos.btnAvaliacao.height()
