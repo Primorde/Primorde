@@ -71,7 +71,7 @@ const configuracoesDesktop = [
     {
         min: 975,
 
-        logotipoWidth: "33.11%",
+        logotipoWidth: "34.44%",
 
         tituloBannerWidth: "49.53%",
         tituloBannerFontSize: "48.29px",
@@ -93,7 +93,7 @@ const configuracoesDesktop = [
     {
         min: 880,
 
-        logotipoWidth: "36.21%",
+        logotipoWidth: "38.88%",
 
         tituloBannerWidth: "54.06%",
         tituloBannerFontSize: "47.58px",
@@ -115,7 +115,7 @@ const configuracoesDesktop = [
     {
         min: 785,
 
-        logotipoWidth: "39.32%",
+        logotipoWidth: "43.32%",
 
         tituloBannerWidth: "58.58%",
         tituloBannerFontSize: "46.87px",
@@ -137,7 +137,7 @@ const configuracoesDesktop = [
     {
         min: 690,
 
-        logotipoWidth: "42.43%",
+        logotipoWidth: "47.76%",
 
         tituloBannerWidth: "63.11%",
         tituloBannerFontSize: "46.16px",
@@ -159,7 +159,7 @@ const configuracoesDesktop = [
     {
         min: 595,
 
-        logotipoWidth: "45.54%",
+        logotipoWidth: "52.20%",
 
         tituloBannerWidth: "67.64%",
         tituloBannerFontSize: "45.45px",
@@ -181,7 +181,7 @@ const configuracoesDesktop = [
     {
         min: 500,
 
-        logotipoWidth: "48.64%",
+        logotipoWidth: "56.64%",
 
         tituloBannerWidth: "72.17%",
         tituloBannerFontSize: "44.74px",
@@ -203,7 +203,7 @@ const configuracoesDesktop = [
     {
         min: 0,
 
-        logotipoWidth: "65%",
+        logotipoWidth: "80%",
 
         tituloBannerWidth: "96%",
         tituloBannerFontSize: "clamp(35px, 8.7vw, 41px)",
@@ -217,7 +217,7 @@ const configuracoesDesktop = [
         mainWidth: "100%",
         mainMarginLeft: "0%",
 
-        servicosWidth: "26vw",
+        servicosWidth: "28vw",
         titulosGeraisWidth: "95%",
         carrosseisTextoWidth: "96%"
     }
