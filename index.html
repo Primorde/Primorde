@@ -34,10 +34,114 @@
     <meta name="twitter:image" content="https://primorde.com.br/logotipo.png">
 
     <link rel="icon" type="image/jpeg" href="logotipo.png">
+    
+    <!-- =====================================================
+     LOADING CRÍTICO
+     ===================================================== -->
+
+<link
+    rel="preload"
+    as="image"
+    href="img/loading.gif"
+    fetchpriority="high"
+>
+
+<style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+    }
+
+    /*
+     * Loading é o primeiro conteúdo visível.
+     */
+    #primorde-loading-screen {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        z-index: 999999999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transition:
+            opacity .6s ease,
+            visibility .6s ease;
+    }
+
+    #primorde-loading-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #primorde-loading-gif {
+        display: block;
+        width: auto;
+        height: auto;
+        max-width: 70vw;
+        max-height: 70vh;
+        object-fit: contain;
+        border-radius: 100vw;
+    }
+
+    /*
+     * Enquanto o site ainda não estiver pronto,
+     * tudo, exceto a tela de loading, permanece invisível.
+     */
+    body:not(.primorde-site-ready) > *:not(#primorde-loading-screen) {
+        visibility: hidden !important;
+    }
+
+    /*
+     * Quando o site estiver pronto.
+     */
+    #primorde-loading-screen.primorde-loading-hide {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+</style>
+
+<!--
+    O CSS principal é carregado em paralelo,
+    sem bloquear a primeira pintura do loading.
+-->
+<link
+    rel="preload"
+    href="css/style_index.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+>
+
+<noscript>
     <link rel="stylesheet" href="css/style_index.css">
+</noscript>
 </head>
 
 <body>
+
+    <div
+        id="primorde-loading-screen"
+        aria-hidden="true"
+    >
+        <div id="primorde-loading-content">
+            <img
+                id="primorde-loading-gif"
+                src="img/loading.gif"
+                alt=""
+                fetchpriority="high"
+            >
+        </div>
+    </div>
 
 <header>
 
