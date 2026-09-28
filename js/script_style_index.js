@@ -887,7 +887,7 @@ const configuracoesResponsivas = [
 
         intervencao(tl, config);
 
-        if (ap === "descktop") {
+        if (ap === "desktop") {
 
             const alturaCabecalho =
                 elementos.logotipo.height() + 15;
@@ -912,7 +912,7 @@ const configuracoesResponsivas = [
         let width = "100%";
 
 
-        if (ap === "descktop") {
+        if (ap === "desktop") {
 
             if (tl >= 975) {
 
@@ -1001,7 +1001,7 @@ const configuracoesResponsivas = [
 
 
         ajustarAlturas(
-            "descktop",
+            "desktop",
             tela,
             config
         );
@@ -1009,7 +1009,7 @@ const configuracoesResponsivas = [
 
         setSizeCards(
             tela,
-            "descktop"
+            "desktop"
         );
     }
 
