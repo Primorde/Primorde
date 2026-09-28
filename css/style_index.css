@@ -319,6 +319,7 @@
         font-weight: 400;
         letter-spacing: .025em;
         text-align: justify;
+        margin-bottom: 2vw;
     }
 
     .texto_servicos strong,
@@ -409,7 +410,7 @@
 
     .section_atendimento .menu_atendimento {
         display: flex;
-        margin-top: 2vw;
+        margin-top: 4vw;
     }
 
     .section_atendimento .menu_atendimento img {
