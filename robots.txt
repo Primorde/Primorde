@@ -1,11 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+User-agent: *
+Allow: /
 
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    <url>
-        <loc>https://primorde.github.io/Primorde/</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-    </url>
-
-</urlset>
+Sitemap: https://primorde.com.br/sitemap.xml
