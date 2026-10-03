@@ -393,19 +393,93 @@
         width: 48%;
     }
 
-    .section_atendimento iframe {
-        display: block;
-        width: 100%;
-        height: 100%;
-        min-height: 280px;
-        border: 0;
-        border-radius: .2vw;
-        box-shadow: 0 4px 10px rgba(1, 1, 1, .5);
-    }
+    /* Container que segura o mapa e a caixa */
+.bloco1 .mapa_link_wrapper {
+    display: block;
+    position: relative; /* Muito importante! Prende o card branco dentro desta área */
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 8px; /* Mantém os cantos arredondados, que ficam ótimos no tema escuro */
+    background-color: #000;
+}
 
-    .section_atendimento iframe:hover {
-        box-shadow: 0 4px 10px rgba(1, 1, 1, .9);
-    }
+/* O mapa em si */
+.img_mapa_fundo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* O efeito de Hover: Escurece APENAS O MAPA e dá o zoom */
+.bloco1 .mapa_link_wrapper:hover .img_mapa_fundo {
+    transform: scale(1.03);
+    filter: brightness(0.6); /* Deixa a imagem escura como pediu */
+}
+
+/* ===================================================
+   ESTILOS DA CAIXA BRANCA (ESTILO GOOGLE MAPS)
+   =================================================== */
+.mapa_card_google {
+    position: absolute; /* Flutua a caixa por cima do mapa */
+    top: 10px;
+    left: 10px;
+    background-color: #fff;
+    padding: 10px 14px;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    pointer-events: none; /* Garante que o clique passa direto para o link principal */
+    transition: transform 0.3s ease;
+}
+
+/* Um detalhe extra moderno: a caixinha sobe de leve quando o rato passa por cima */
+.bloco1 .mapa_link_wrapper:hover .mapa_card_google {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+.mapa_card_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.mapa_card_titulo {
+    font-size: 15px;
+    font-weight: 600;
+    color: #202124;
+}
+
+.mapa_icon_link {
+    opacity: 0.8;
+}
+
+.mapa_card_avaliacao {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #70757a;
+    gap: 5px;
+}
+
+.mapa_nota {
+    font-weight: bold;
+    color: #3c4043;
+}
+
+.mapa_estrela {
+    color: #fbbc04; /* Amarelo dourado original do Google */
+    font-size: 15px;
+    line-height: 1;
+    margin-top: -2px;
+}
+
 
     .section_atendimento .menu_atendimento {
         display: flex;
