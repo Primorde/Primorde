@@ -8,7 +8,7 @@ $(window).on("load", function () {
 
     $("header").css({
         backgroundImage:
-            "radial-gradient(circle,rgba(0,0,0,.71) 0%, rgba(0,0,0,.56) 0%, rgba(0,0,0,.70) 0%), url('img/header/fundo_banner_top.jpg')"
+            "radial-gradient(circle,rgba(0,0,0,.71) 0%, rgba(0,0,0,.56) 0%, rgba(0,0,0,.70) 0%), url('img/header/fundo_banner_top.webp')"
     });
 
     const elementos = {
