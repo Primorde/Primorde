@@ -126,6 +126,9 @@
        ========================================================= */
 
     header {
+        background-image:
+            radial-gradient(circle, rgba(0,0,0,.71) 0%, rgba(0,0,0,.56) 0%, rgba(0,0,0,.70) 100%),
+            url('../img/header/fundo_banner_top.webp');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -561,6 +564,9 @@
 
     .estrelas_avaliacao img {
         cursor: default;
+        height: var(--stars-height, auto);
+        width: auto;
+        max-width: 100%;
     }
 
 
