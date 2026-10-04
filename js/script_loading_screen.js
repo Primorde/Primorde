@@ -16,7 +16,7 @@
  *    carregando normalmente por trás.
  * 4. O site só é revelado depois do evento "load".
  * 5. As fontes também são aguardadas quando disponíveis.
- * 6. O loading permanece por no mínimo 3 segundos.
+ * 6. O loading permanece por no mínimo 2.5 segundos.
  * 7. Depois desaparece com fade-out.
  * =========================================================
  */
@@ -30,7 +30,7 @@
        CONFIGURAÇÕES
        ===================================================== */
 
-    var tempoMinimo = 3000;
+    var tempoMinimo = 2500;
 
 
     /* =====================================================
