@@ -1,4 +1,66 @@
+# ==========================================
+# PRIMORDE - ROBOTS.TXT
+# ==========================================
+
+# Permite rastreamento geral
 User-agent: *
 Allow: /
+
+# ==========================================
+# OPENAI
+# ==========================================
+
+# ChatGPT Search
+User-agent: OAI-SearchBot
+Allow: /
+
+# OpenAI - rastreamento para possível treinamento
+User-agent: GPTBot
+Allow: /
+
+# ==========================================
+# GOOGLE
+# ==========================================
+
+# Google Search
+User-agent: Googlebot
+Allow: /
+
+# Gemini / Google AI
+User-agent: Google-Extended
+Allow: /
+
+# ==========================================
+# MICROSOFT / BING
+# ==========================================
+
+# Bing Search
+User-agent: bingbot
+Allow: /
+
+# Microsoft Ads
+User-agent: adidxbot
+Allow: /
+
+# Bing Preview
+User-agent: BingPreview
+Allow: /
+
+# ==========================================
+# OUTROS CRAWLERS DE IA
+# ==========================================
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# ==========================================
+# SITEMAP
+# ==========================================
 
 Sitemap: https://primorde.com.br/sitemap.xml
