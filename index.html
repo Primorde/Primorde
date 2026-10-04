@@ -111,6 +111,29 @@
         visibility: hidden;
         pointer-events: none;
     }
+
+    /* =====================================================
+       LINKS SEM ALTERAR O DESIGN EXISTENTE
+       ===================================================== */
+    a.link-sem-alteracao {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    a.link-imagem {
+        display: contents;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    a.link-botao {
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: inherit;
+        text-decoration: none;
+    }
+
 </style>
 
 <!--
@@ -129,7 +152,7 @@
 </noscript>
 </head>
 
-<body>
+<body id="topo">
 
     <div
         id="primorde-loading-screen"
@@ -156,13 +179,29 @@
         <div class="cabecalho_action">
 
             <div class="btn_whatszapp">
-                <img src="img/header/btn_whatszapp.webp" alt="WhatsApp da Primorde: +55 73 99986-8244" fetchpriority="high" loading="eager">
-                <span class="sr-only">Entre em contato com a Primorde pelo WhatsApp: +55 73 99986-8244.</span>
+                <a
+                    href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20obter%20informa%C3%A7%C3%B5es."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="link-botao"
+                    aria-label="Entrar em contato com a Primorde pelo WhatsApp"
+                >
+                    <img src="img/header/btn_whatszapp.webp" alt="WhatsApp da Primorde: +55 73 99986-8244" fetchpriority="high" loading="eager">
+                    <span class="sr-only">Entre em contato com a Primorde pelo WhatsApp: +55 73 99986-8244.</span>
+                </a>
             </div>
 
             <div class="btn_localizacao">
-                <img src="img/header/btn_localizacao.webp" alt="Localização da Primorde em Teixeira de Freitas - BA" fetchpriority="high" loading="eager">
-                <span class="sr-only">Localização: Teixeira de Freitas - Bahia.</span>
+                <a
+                    href="https://maps.app.goo.gl/hc1ik7ka9zkJVHed8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="link-botao"
+                    aria-label="Ver localização da Primorde"
+                >
+                    <img src="img/header/btn_localizacao.webp" alt="Localização da Primorde em Teixeira de Freitas - BA" fetchpriority="high" loading="eager">
+                    <span class="sr-only">Localização: Teixeira de Freitas - Bahia.</span>
+                </a>
             </div>
 
         </div>
@@ -185,13 +224,27 @@
         <div class="banner_actions_header">
 
             <div class="btn_solicitar_orcamento_header">
-                <img src="img/header/btn_slc_orc.webp" alt="Solicitar um orçamento pelo WhatsApp">
-                <span class="sr-only">Solicite agora um orçamento pelo WhatsApp da Primorde.</span>
+                <a
+                    href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="link-botao"
+                    aria-label="Solicitar orçamento pelo WhatsApp"
+                >
+                    <img src="img/header/btn_slc_orc.webp" alt="Solicitar um orçamento pelo WhatsApp">
+                    <span class="sr-only">Solicite agora um orçamento pelo WhatsApp da Primorde.</span>
+                </a>
             </div>
 
             <div class="btn_galeria_header">
-                <img src="img/header/btn_ir_glr.webp" alt="Conhecer a galeria de fotos da Primorde">
-                <span class="sr-only">Conheça nossa galeria de fotos.</span>
+                <a
+                    href="#galeria"
+                    class="link-botao"
+                    aria-label="Conhecer a galeria de fotos da Primorde"
+                >
+                    <img src="img/header/btn_ir_glr.webp" alt="Conhecer a galeria de fotos da Primorde">
+                    <span class="sr-only">Conheça nossa galeria de fotos.</span>
+                </a>
             </div>
 
         </div>
@@ -201,15 +254,15 @@
     <section class="container_servicos">
 
         <section class="carrocel_servicos flex-scroll">
-            <img style="margin-left:.9vw" src="img/main/carrocel_servicos/construcao.webp" alt="Serviço de construção">
-            <img src="img/main/carrocel_servicos/reforma.webp" alt="Serviço de reforma">
-            <img src="img/main/carrocel_servicos/alvenaria.webp" alt="Serviço de alvenaria">
-            <img src="img/main/carrocel_servicos/cobertura.webp" alt="Instalação e manutenção de coberturas">
-            <img src="img/main/carrocel_servicos/eletrica.webp" alt="Instalação e manutenção elétrica residencial e comercial">
-            <img src="img/main/carrocel_servicos/hidralica.webp" alt="Instalação e manutenção hidráulica residencial e comercial">
-            <img src="img/main/carrocel_servicos/acabamento.webp" alt="Serviço de acabamento, pintura e revestimentos">
-            <img src="img/main/carrocel_servicos/instalacao.webp" alt="Serviços gerais de instalação de equipamentos diversos">
-            <img src="img/main/carrocel_servicos/manutencao.webp" alt="Serviço de manutenção preventiva e corretiva de equipamentos diversos">
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20constru%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre o serviço de construcao"><img style="margin-left:.9vw" src="img/main/carrocel_servicos/construcao.webp" alt="Serviço de construção"></a>
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20reforma." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre o serviço de reforma"><img src="img/main/carrocel_servicos/reforma.webp" alt="Serviço de reforma"></a>
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20alvenaria." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre o serviço de alvenaria"><img src="img/main/carrocel_servicos/alvenaria.webp" alt="Serviço de alvenaria"></a>
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20cobertura." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre o serviço de cobertura"><img src="img/main/carrocel_servicos/cobertura.webp" alt="Instalação e manutenção de coberturas"></a>
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20servi%C3%A7os%20de%20el%C3%A9trica." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre o serviço de eletrica"><img src="img/main/carrocel_servicos/eletrica.webp" alt="Instalação e manutenção elétrica residencial e comercial"></a>
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20servi%C3%A7os%20de%20hidr%C3%A1ulica." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre o serviço de hidralica"><img src="img/main/carrocel_servicos/hidralica.webp" alt="Instalação e manutenção hidráulica residencial e comercial"></a>
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20acabamento." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre o serviço de acabamento"><img src="img/main/carrocel_servicos/acabamento.webp" alt="Serviço de acabamento, pintura e revestimentos"></a>
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20instala%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre o serviço de instalacao"><img src="img/main/carrocel_servicos/instalacao.webp" alt="Serviços gerais de instalação de equipamentos diversos"></a>
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20manuten%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre o serviço de manutencao"><img src="img/main/carrocel_servicos/manutencao.webp" alt="Serviço de manutenção preventiva e corretiva de equipamentos diversos"></a>
         </section>
 
     </section>
@@ -224,12 +277,12 @@
 
         <div class="catalogo_servicos flex-scroll">
 
-            <img class="card-img mg_right" src="img/main/section_servicos/Alvenaria.webp" alt="Serviço de alvenaria estrutural residencial e comercial">
-            <img class="card-img mg_center" src="img/main/section_servicos/Cobertura.webp" alt="Construção e reforma de coberturas residencial e comercial">
-            <img class="card-img mg_center" src="img/main/section_servicos/Elétrica.webp" alt="Construção e reforma elétrica residencial e comercial">
-            <img class="card-img mg_center" src="img/main/section_servicos/Hidrálica.webp" alt="Construção e reforma hidráulica residencial e comercial">
-            <img class="card-img mg_center" src="img/main/section_servicos/Acabamento.webp" alt="Serviço de acabamento, pintura e revestimentos" loading="lazy">
-            <img class="card-img mg_left" src="img/main/section_servicos/Projetos.webp" alt="Elaboração e execução de projetos para construção" loading="lazy">
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20alvenaria." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre Alvenaria"><img class="card-img mg_right" src="img/main/section_servicos/Alvenaria.webp" alt="Serviço de alvenaria estrutural residencial e comercial"></a>
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20cobertura." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre Cobertura"><img class="card-img mg_center" src="img/main/section_servicos/Cobertura.webp" alt="Construção e reforma de coberturas residencial e comercial"></a>
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20servi%C3%A7os%20de%20el%C3%A9trica." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre Elétrica"><img class="card-img mg_center" src="img/main/section_servicos/Elétrica.webp" alt="Construção e reforma elétrica residencial e comercial"></a>
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20servi%C3%A7os%20de%20hidr%C3%A1ulica." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre Hidrálica"><img class="card-img mg_center" src="img/main/section_servicos/Hidrálica.webp" alt="Construção e reforma hidráulica residencial e comercial"></a>
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20acabamento." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre Acabamento"><img class="card-img mg_center" src="img/main/section_servicos/Acabamento.webp" alt="Serviço de acabamento, pintura e revestimentos" loading="lazy"></a>
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20projetos." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre Projetos"><img class="card-img mg_left" src="img/main/section_servicos/Projetos.webp" alt="Elaboração e execução de projetos para construção" loading="lazy"></a>
 
         </div>
 
@@ -250,15 +303,15 @@
 
         <div class="carrossel_produtos flex-scroll">
 
-            <img class="card-img mg_right" src="img/main/section_produtos/Motores para portões.webp" alt="Instalação e manutenção de motores para portões">
-            <img class="card-img mg_center" src="img/main/section_produtos/Intefones e vídeo porteiros.webp" alt="Instalação e manutenção de interfones e vídeo porteiros">
-            <img class="card-img mg_center" src="img/main/section_produtos/Fechadura eletrônica.webp" alt="Instalação de fechaduras eletrônicas e digitais">
-            <img class="card-img mg_center" src="img/main/section_produtos/Padrões de entrada.webp" alt="Instalação e montagem de padrões de entrada de energia monofásico, bifásico e trifásico">
-            <img class="card-img mg_center" src="img/main/section_produtos/Coifas.webp" alt="Instalação e manutenção de coifas residenciais e comerciais">
-            <img class="card-img mg_center" src="img/main/section_produtos/Cooktops e fogões de indução.webp" alt="Instalação e manutenção de cooktops e fogões de indução residenciais e comerciais">
-            <img class="card-img mg_center" src="img/main/section_produtos/Caixa d´ água.webp" alt="Instalação, higienização e manutenção de caixa d'água" loading="lazy">
-            <img class="card-img mg_center" src="img/main/section_produtos/Chuveiros Eletrônicos.webp" alt="Instalação e manutenção de chuveiros eletrônicos" loading="lazy">
-            <img class="card-img mg_left" src="img/main/section_produtos/Pressurizadores.webp" alt="Instalação e manutenção de pressurizadores de água" loading="lazy">
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20motores%20para%20port%C3%B5es." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre Motores para portões"><img class="card-img mg_right" src="img/main/section_produtos/Motores para portões.webp" alt="Instalação e manutenção de motores para portões"></a>
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20interfones%20e%20videoporteiros." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre Interfones e vídeo porteiros"><img class="card-img mg_center" src="img/main/section_produtos/Intefones e vídeo porteiros.webp" alt="Instalação e manutenção de interfones e vídeo porteiros"></a>
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20fechaduras%20eletr%C3%B4nicas." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre Fechaduras eletrônicas"><img class="card-img mg_center" src="img/main/section_produtos/Fechadura eletrônica.webp" alt="Instalação de fechaduras eletrônicas e digitais"></a>
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20padr%C3%B5es%20de%20entrada." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre Padrões de entrada"><img class="card-img mg_center" src="img/main/section_produtos/Padrões de entrada.webp" alt="Instalação e montagem de padrões de entrada de energia monofásico, bifásico e trifásico"></a>
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20coifas." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre Coifas"><img class="card-img mg_center" src="img/main/section_produtos/Coifas.webp" alt="Instalação e manutenção de coifas residenciais e comerciais"></a>
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20cooktops%20e%20fog%C3%B5es%20de%20indu%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre Cooktops e fogões de indução"><img class="card-img mg_center" src="img/main/section_produtos/Cooktops e fogões de indução.webp" alt="Instalação e manutenção de cooktops e fogões de indução residenciais e comerciais"></a>
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20caixa%20d%27%C3%A1gua." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre Caixa d'água"><img class="card-img mg_center" src="img/main/section_produtos/Caixa d´ água.webp" alt="Instalação, higienização e manutenção de caixa d'água" loading="lazy"></a>
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20chuveiros%20eletr%C3%B4nicos." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre Chuveiros Eletrônicos"><img class="card-img mg_center" src="img/main/section_produtos/Chuveiros Eletrônicos.webp" alt="Instalação e manutenção de chuveiros eletrônicos" loading="lazy"></a>
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20pressurizadores." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Solicitar informações sobre Pressurizadores"><img class="card-img mg_left" src="img/main/section_produtos/Pressurizadores.webp" alt="Instalação e manutenção de pressurizadores de água" loading="lazy"></a>
 
         </div>
 
@@ -312,13 +365,29 @@
                 <div class="menu_atendimento">
 
                     <div class="btn_ver_no_google_maps">
-                        <img src="img/main/section_atendimento/btn_ver_no_google_maps.webp" alt="Ver nossa localização no Google Maps">
-                        <span class="sr-only">Veja nossa localização no Google Maps.</span>
+                        <a
+                            href="https://maps.app.goo.gl/hc1ik7ka9zkJVHed8"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="link-botao"
+                            aria-label="Ver localização no Google Maps"
+                        >
+                            <img src="img/main/section_atendimento/btn_ver_no_google_maps.webp" alt="Ver nossa localização no Google Maps">
+                            <span class="sr-only">Veja nossa localização no Google Maps.</span>
+                        </a>
                     </div>
 
                     <div class="btn_solicitar_atendimento">
-                        <img src="img/main/section_atendimento/btn_solicitar_atendimento.webp" alt="Solicitar atendimento pelo WhatsApp">
-                        <span class="sr-only">Solicite atendimento pelo WhatsApp da Primorde.</span>
+                        <a
+                            href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20atendimento."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="link-botao"
+                            aria-label="Solicitar atendimento pelo WhatsApp"
+                        >
+                            <img src="img/main/section_atendimento/btn_solicitar_atendimento.webp" alt="Solicitar atendimento pelo WhatsApp">
+                            <span class="sr-only">Solicite atendimento pelo WhatsApp da Primorde.</span>
+                        </a>
                     </div>
 
                 </div>
@@ -335,12 +404,12 @@
 
         <div class="catalogo_avaliacao flex-scroll">
 
-            <img class="card-img mg_right" src="img/main/section_avaliacao/Profissionais Especializados.webp" alt="Diferencial: Profissionais Especializados" loading="lazy">
-            <img class="card-img mg_center" src="img/main/section_avaliacao/Da alvenaria ao acabamento final.webp" alt="Diferencial: Da alvenaria ao acabamento final" loading="lazy">
-            <img class="card-img mg_center" src="img/main/section_avaliacao/Suporte técnico na Execução.webp" alt="Diferencial: Suporte técnico na execução do projeto" loading="lazy">
-            <img class="card-img mg_center" src="img/main/section_avaliacao/Soluções com Materiais Inclusos.webp" alt="Diferencial: Soluções completas com materiais inclusos" loading="lazy">
-            <img class="card-img mg_center" src="img/main/section_avaliacao/Compromisso com a Pontualidade.webp" alt="Diferencial: Compromisso e pontualidade na entrega" loading="lazy">
-            <img class="card-img mg_left" src="img/main/section_avaliacao/Satisfação em Cada Etapa.webp" alt="Diferencial: Garantia de satisfação em cada etapa" loading="lazy">
+            <a href="https://maps.app.goo.gl/yCf2FJ5J5tBr1v4Z7" target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Avaliar a Primorde no Google Maps"><img class="card-img mg_right" src="img/main/section_avaliacao/Profissionais Especializados.webp" alt="Diferencial: Profissionais Especializados" loading="lazy"></a>
+            <a href="https://maps.app.goo.gl/yCf2FJ5J5tBr1v4Z7" target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Avaliar a Primorde no Google Maps"><img class="card-img mg_center" src="img/main/section_avaliacao/Da alvenaria ao acabamento final.webp" alt="Diferencial: Da alvenaria ao acabamento final" loading="lazy"></a>
+            <a href="https://maps.app.goo.gl/yCf2FJ5J5tBr1v4Z7" target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Avaliar a Primorde no Google Maps"><img class="card-img mg_center" src="img/main/section_avaliacao/Suporte técnico na Execução.webp" alt="Diferencial: Suporte técnico na execução do projeto" loading="lazy"></a>
+            <a href="https://maps.app.goo.gl/yCf2FJ5J5tBr1v4Z7" target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Avaliar a Primorde no Google Maps"><img class="card-img mg_center" src="img/main/section_avaliacao/Soluções com Materiais Inclusos.webp" alt="Diferencial: Soluções completas com materiais inclusos" loading="lazy"></a>
+            <a href="https://maps.app.goo.gl/yCf2FJ5J5tBr1v4Z7" target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Avaliar a Primorde no Google Maps"><img class="card-img mg_center" src="img/main/section_avaliacao/Compromisso com a Pontualidade.webp" alt="Diferencial: Compromisso e pontualidade na entrega" loading="lazy"></a>
+            <a href="https://maps.app.goo.gl/yCf2FJ5J5tBr1v4Z7" target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Avaliar a Primorde no Google Maps"><img class="card-img mg_left" src="img/main/section_avaliacao/Satisfação em Cada Etapa.webp" alt="Diferencial: Garantia de satisfação em cada etapa" loading="lazy"></a>
 
         </div>
 
@@ -353,13 +422,27 @@
         <div class="menu_avaliacao">
 
             <div class="btn_avaliacao">
-                <img src="img/main/section_avaliacao/btn_avaliacao.webp" alt="Deixar uma avaliação da Primorde no Google Maps">
-                <span class="sr-only">Deixe uma avaliação da Primorde no Google Maps.</span>
+                <a
+                    href="https://maps.app.goo.gl/yCf2FJ5J5tBr1v4Z7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="link-botao"
+                    aria-label="Avaliar a Primorde no Google Maps"
+                >
+                    <img src="img/main/section_avaliacao/btn_avaliacao.webp" alt="Deixar uma avaliação da Primorde no Google Maps">
+                    <span class="sr-only">Deixe uma avaliação da Primorde no Google Maps.</span>
+                </a>
             </div>
 
             <div class="btn_voltar_ao_topo">
-                <img src="img/main/section_avaliacao/btn_voltar_ao_topo.webp" alt="Voltar ao topo da página">
-                <span class="sr-only">Voltar ao topo da página.</span>
+                <a
+                    href="#topo"
+                    class="link-botao"
+                    aria-label="Voltar ao topo da página"
+                >
+                    <img src="img/main/section_avaliacao/btn_voltar_ao_topo.webp" alt="Voltar ao topo da página">
+                    <span class="sr-only">Voltar ao topo da página.</span>
+                </a>
             </div>
 
             <div class="estrelas_avaliacao">
@@ -376,11 +459,11 @@
 
         <div class="catalogo_redes_sociais flex-scroll">
 
-            <img class="card-img mg_right" src="img/main/section_redes_sociais/1card_instagram.webp" alt="Instagram da Primorde">
-            <img class="card-img mg_center" src="img/main/section_redes_sociais/2card_facebook.webp" alt="Facebook da Primorde">
-            <img class="card-img mg_center" src="img/main/section_redes_sociais/3card_whatszapp.webp" alt="WhatsApp da Primorde">
-            <img class="card-img mg_center" src="img/main/section_redes_sociais/4card_youtube.webp" alt="Canal da Primorde no YouTube">
-            <img class="card-img mg_left" src="img/main/section_redes_sociais/5card_tiktok.webp" alt="TikTok da Primorde">
+            <a href="https://www.instagram.com/primorde.oficial/" target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Instagram da Primorde"><img class="card-img mg_right" src="img/main/section_redes_sociais/1card_instagram.webp" alt="Instagram da Primorde"></a>
+            <a href="https://www.facebook.com/share/1C5QmnoZG8/" target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Facebook da Primorde"><img class="card-img mg_center" src="img/main/section_redes_sociais/2card_facebook.webp" alt="Facebook da Primorde"></a>
+            <a href="https://wa.me/5573999868244?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20melhor%20a%20Primorde." target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="WhatsApp da Primorde"><img class="card-img mg_center" src="img/main/section_redes_sociais/3card_whatszapp.webp" alt="WhatsApp da Primorde"></a>
+            <a href="https://youtube.com/@primordeoficial?si=xCAwoVU9ymet0MbU" target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="Canal da Primorde no YouTube"><img class="card-img mg_center" src="img/main/section_redes_sociais/4card_youtube.webp" alt="Canal da Primorde no YouTube"></a>
+            <a href="https://www.tiktok.com/@primorde.oficial?_r=1&_t=ZS-99bQ4WaaSUy" target="_blank" rel="noopener noreferrer" class="link-imagem" aria-label="TikTok da Primorde"><img class="card-img mg_left" src="img/main/section_redes_sociais/5card_tiktok.webp" alt="TikTok da Primorde"></a>
 
         </div>
 
@@ -495,7 +578,6 @@
 <script src="js/script_loading_screen.js" defer></script>
 <script src="js/script_lazy_loader.js" defer></script>
 <script src="js/script_style_index.js" defer></script>
-<script src="js/script_action_index.js" defer></script>
 
 </body>
 </html>
