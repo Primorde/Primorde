@@ -36,6 +36,28 @@
         margin: 0;
     }
 
+    /* =====================================================
+       LINKS SEM ALTERAR O DESIGN EXISTENTE
+       ===================================================== */
+    a.link-sem-alteracao {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    a.link-imagem {
+        display: contents;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    a.link-botao {
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: inherit;
+        text-decoration: none;
+    }
+
 
     /* =========================================================
        SCROLL
