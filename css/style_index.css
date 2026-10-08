@@ -1,5 +1,3 @@
-    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
 
     /* =========================================================
@@ -148,12 +146,23 @@
        ========================================================= */
 
     header {
-        background-image:
-            radial-gradient(circle, rgba(0,0,0,.71) 0%, rgba(0,0,0,.56) 0%, rgba(0,0,0,.70) 100%),
-            url('../img/header/fundo_banner_top.webp');
+        /* Placeholder leve: o banner pesado NÃO é requisitado no carregamento inicial. */
+        background-color: #333;
+        background-image: none;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+    }
+
+    /*
+       Ativação posterior do banner.
+       O JavaScript poderá adicionar .banner-bg-ready somente depois
+       que o conteúdo visível do topo estiver estabilizado.
+    */
+    header.banner-bg-ready {
+        background-image:
+            radial-gradient(circle, rgba(0,0,0,.71) 0%, rgba(0,0,0,.56) 0%, rgba(0,0,0,.70) 100%),
+            url('../img/header/fundo_banner_top.webp');
     }
 
     header .cabecalho {
@@ -217,7 +226,7 @@
 
     header .titulo_header {
         color: #fff;
-        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        font-family: 'Arial Black', Arial, Helvetica, sans-serif;
         font-weight: 900;
         font-size: clamp(38px, 6.4vw, 64px);
         line-height: 1;
@@ -239,7 +248,7 @@
 
     header .slogan_header {
         color: #fff;
-        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
         font-weight: 400;
         margin: 1vw 0 3vw 0px;
     }
@@ -306,6 +315,8 @@
 
     .carrocel_servicos img {
         width: 10vw;
+        aspect-ratio: 1230 / 356;
+        height: auto;
         margin: 1.8vw 2vw 1.8vw 0;
         flex-shrink: 0;
         cursor: pointer;
@@ -742,7 +753,7 @@
 .site-footer {
   background-color: #000000;
   color: #f3f4f6;
-  font-family: 'Inter', 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, Helvetica, sans-serif;
   font-size: 0.9rem;
   line-height: 1.6;
   border-top: 1px solid #1f2937;
@@ -800,7 +811,7 @@
   font-weight: 400;
   letter-spacing: 0.03em;
   transform: translateY(-20px);
-  font-family: 'Dancing Script', 'Great Vibes', cursive;
+  font-family: 'Segoe Print', 'Comic Sans MS', cursive;
 }
 
 /* TÍTULOS E TEXTOS */
@@ -839,7 +850,6 @@
   background-color: rgba(255, 255, 255, 0.04);
   color: #fbbf24;
   border: 1px solid rgba(251, 191, 36, 0.35);
-  border-radius: 6px;
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 600;
