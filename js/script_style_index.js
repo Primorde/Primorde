@@ -6,32 +6,6 @@ $(document).on('contextmenu dragstart', 'img, .card-img', function (e) {
 
 $(window).on("load", function () {
 
-        /* =====================================================
-       CARREGAMENTO TARDIO DO FUNDO DO BANNER
-       =====================================================
-       O banner permanece cinza durante todo o carregamento inicial.
-       Somente depois do evento window.load o navegador começa a
-       baixar a imagem do fundo. A imagem só é aplicada ao header
-       depois que terminou de carregar.
-    */
-
-    (function carregarFundoBannerDepoisDoLoad() {
-
-        const headerBanner = document.querySelector("header");
-
-        if (!headerBanner) {
-            return;
-        }
-
-        const imagemBanner = new Image();
-
-        imagemBanner.onload = function () {
-            headerBanner.classList.add("banner-bg-ready");
-        };
-
-        imagemBanner.src = "img/header/fundo_banner_top.webp";
-
-    })();
 
     const elementos = {
         logotipo: $(".logotipo img"),
