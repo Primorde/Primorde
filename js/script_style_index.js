@@ -1,9 +1,3 @@
-$(document).on('contextmenu dragstart', 'img, .card-img', function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    return false;
-});
-
 $(window).on("load", function () {
 
 
