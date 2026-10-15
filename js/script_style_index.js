@@ -982,7 +982,7 @@ $(window).on("load", function () {
 
 
         let width =
-            "100%";
+            "44%";
 
 
         if (ap === "desktop") {
