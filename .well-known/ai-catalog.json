@@ -8,7 +8,7 @@
     {
       "identifier": "urn:air:primorde.com.br:profile:business",
       "displayName": "Perfil institucional e catálogo de serviços da Primorde",
-      "type": "application/json",
+      "type": "application/ai-catalog+json",
       "description": "Informações públicas e orientações de atendimento da Primorde, organizadas para descoberta por agentes de IA. Esta entrada é descritiva; não representa uma API, agente autônomo ou ferramenta WebMCP executável.",
       "tags": [
         "Primorde",
