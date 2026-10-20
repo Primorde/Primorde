@@ -1,1 +1,248 @@
-
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Primorde",
+    "documentationUrl": "https://primorde.com.br/"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:primorde.com.br:profile:business",
+      "displayName": "Perfil institucional e catálogo de serviços da Primorde",
+      "type": "application/json",
+      "description": "Informações públicas e orientações de atendimento da Primorde, organizadas para descoberta por agentes de IA. Esta entrada é descritiva; não representa uma API, agente autônomo ou ferramenta WebMCP executável.",
+      "tags": [
+        "Primorde",
+        "construção",
+        "reformas",
+        "alvenaria",
+        "cobertura",
+        "instalações elétricas",
+        "instalações hidráulicas",
+        "acabamento",
+        "instalação de equipamentos",
+        "manutenção de equipamentos",
+        "materiais e equipamentos",
+        "orçamento",
+        "Teixeira de Freitas",
+        "Bahia"
+      ],
+      "capabilities": [
+        "public-business-information",
+        "service-discovery",
+        "contact-routing",
+        "quote-request-guidance"
+      ],
+      "representativeQueries": [
+        "Quais serviços a Primorde oferece em Teixeira de Freitas?",
+        "Como solicitar um orçamento à Primorde?",
+        "A Primorde faz instalações elétricas e hidráulicas?",
+        "Qual é o WhatsApp oficial da Primorde?",
+        "Quanto custa a visita técnica da Primorde em Teixeira de Freitas?"
+      ],
+      "version": "1.0.0",
+      "metadata": {
+        "language": "pt-BR",
+        "resource_kind": "public_business_profile",
+        "webmcp_implemented": false,
+        "executable_tools_available": false,
+        "source_document": "primorde-ai-documentation(1).txt",
+        "source_website": "https://primorde.com.br/",
+        "source_note": "O site e a documentação fornecem informações institucionais e links de contato; não foi identificada uma API pública ou ferramenta executável de agente."
+      },
+      "data": {
+        "organization": {
+          "name": "Primorde",
+          "website": "https://primorde.com.br/",
+          "description": "Empresa que atua com construções, reformas, instalações, manutenções diversas e fornecimento de materiais e equipamentos para residências e estabelecimentos comerciais.",
+          "language": "pt-BR",
+          "primary_location": {
+            "city": "Teixeira de Freitas",
+            "state": "Bahia",
+            "country": "Brasil"
+          }
+        },
+        "contact": {
+          "preferred_channel": "WhatsApp",
+          "phone_display": "+55 73 99986-8244",
+          "whatsapp_url": "https://wa.me/5573999868244",
+          "website_url": "https://primorde.com.br/"
+        },
+        "business_hours": {
+          "description": "Segunda-feira a sábado, em horário comercial.",
+          "exact_opening_and_closing_times_published": false,
+          "agent_instruction": "Não inventar horários exatos nem prometer atendimento imediato ou fora do horário informado."
+        },
+        "service_area": {
+          "primary": "Teixeira de Freitas, Bahia, Brasil",
+          "additional_coverage": "Municípios próximos, conforme avaliação e confirmação da equipe.",
+          "agent_instruction": "Para solicitações de outras localidades, perguntar município e localidade do serviço e encaminhar para confirmação. Não afirmar atendimento automático em toda a Bahia."
+        },
+        "services": [
+          {
+            "id": "construction",
+            "name": "Construção",
+            "areas_explicitly_mentioned": [
+              "Alvenaria",
+              "Cobertura"
+            ],
+            "description": "Serviços de construção conforme a necessidade do cliente e avaliação da Primorde.",
+            "limitations": "Não presumir execução de qualquer modalidade de obra ou serviço especializado sem confirmação."
+          },
+          {
+            "id": "renovation",
+            "name": "Reformas residenciais e de estabelecimentos",
+            "areas_explicitly_mentioned": [
+              "Alvenaria",
+              "Cobertura",
+              "Instalações elétricas",
+              "Instalações hidráulicas",
+              "Acabamento"
+            ],
+            "description": "Adequação, melhoria ou recuperação de ambientes e estruturas conforme avaliação da empresa.",
+            "intake_questions": [
+              "Qual ambiente será reformado?",
+              "Qual é o tipo de reforma?",
+              "Qual é o escopo pretendido?"
+            ]
+          },
+          {
+            "id": "installations",
+            "name": "Instalações",
+            "areas_explicitly_mentioned": [
+              "Instalações elétricas",
+              "Instalações hidráulicas",
+              "Instalação de equipamentos"
+            ],
+            "intake_questions": [
+              "Qual equipamento ou sistema precisa ser instalado?",
+              "Em qual local será feita a instalação?",
+              "O cliente já possui o equipamento ou deseja consultar o fornecimento?"
+            ],
+            "limitations": "Não presumir compatibilidade técnica, disponibilidade de equipamentos ou inclusão de materiais sem confirmação."
+          },
+          {
+            "id": "maintenance",
+            "name": "Manutenções diversas",
+            "areas_explicitly_mentioned": [
+              "Manutenção de equipamentos"
+            ],
+            "intake_questions": [
+              "Qual é o equipamento ou sistema?",
+              "Qual problema foi observado?",
+              "Em qual local será realizado o atendimento?"
+            ],
+            "limitations": "Não diagnosticar definitivamente falhas nem prometer reparo, prazo, peças ou solução antes da avaliação."
+          },
+          {
+            "id": "finishing",
+            "name": "Acabamento",
+            "description": "Serviços de acabamento relacionados à construção e reforma.",
+            "limitations": "Não inventar técnicas, materiais ou especialidades que não estejam confirmadas."
+          },
+          {
+            "id": "materials-equipment",
+            "name": "Fornecimento de materiais e equipamentos",
+            "description": "Possibilidade de fornecimento associado a serviços de construção, reforma e instalação, conforme a solução contratada.",
+            "limitations": "Disponibilidade, preço, prazo e possibilidade de venda avulsa devem ser confirmados pela equipe."
+          }
+        ],
+        "products_and_equipment": {
+          "inventory_complete": false,
+          "known_brands_and_models": [],
+          "agent_instruction": "Não inventar marcas, modelos, especificações, preços, estoque ou prazos. Confirmar com a equipe se o produto pode ser vendido separadamente ou se o fornecimento está associado à instalação."
+        },
+        "technical_visit": {
+          "available_when_needed": true,
+          "usual_reference_price_brl": 30.0,
+          "applies_to": "Teixeira de Freitas/BA",
+          "price_is_universal": false,
+          "agent_instruction": "Informar que a visita técnica em Teixeira de Freitas costuma custar R$ 30,00, sujeito à confirmação. Não afirmar que é gratuita, que o valor vale para outros municípios ou que será abatido do orçamento."
+        },
+        "quotes": {
+          "fixed_price_list_available": false,
+          "price_determination_factors": [
+            "Tipo de serviço",
+            "Complexidade da demanda",
+            "Local de execução",
+            "Materiais e equipamentos necessários",
+            "Necessidade de visita técnica",
+            "Escopo confirmado pela equipe"
+          ],
+          "suggested_intake_fields": [
+            "Nome, se necessário",
+            "Município e bairro",
+            "Tipo de serviço",
+            "Descrição resumida da necessidade",
+            "Tipo de imóvel ou estabelecimento, quando relevante",
+            "Equipamento envolvido, quando aplicável",
+            "Fotos ou vídeos, se úteis e fornecidos voluntariamente",
+            "Preferência de contato ou disponibilidade para visita, quando relevante"
+          ],
+          "agent_instruction": "Não apresentar preços estimados como valores oficiais. Solicitar apenas os dados relevantes para o caso; não exigir todos os campos para iniciar o atendimento."
+        },
+        "customer_intake_flow": [
+          {
+            "step": 1,
+            "name": "Identificar necessidade",
+            "prompt": "Você precisa de construção, reforma, instalação, manutenção ou informações sobre algum equipamento?"
+          },
+          {
+            "step": 2,
+            "name": "Identificar localização",
+            "prompt": "Em qual cidade e bairro será realizado o serviço?"
+          },
+          {
+            "step": 3,
+            "name": "Entender serviço",
+            "prompt": "Poderia descrever brevemente o serviço, problema ou equipamento?"
+          },
+          {
+            "step": 4,
+            "name": "Verificar materiais e equipamentos",
+            "prompt": "Você já possui os materiais ou equipamentos ou deseja consultar uma solução que inclua fornecimento e instalação?"
+          },
+          {
+            "step": 5,
+            "name": "Avaliar necessidade de visita",
+            "prompt": "Se necessário, a equipe poderá avaliar o local e confirmar o valor e as condições da visita técnica."
+          },
+          {
+            "step": 6,
+            "name": "Encaminhar para atendimento humano",
+            "url": "https://wa.me/5573999868244"
+          }
+        ],
+        "agent_rules": {
+          "must": [
+            "Responder em português brasileiro, de forma clara e cordial.",
+            "Distinguir informações confirmadas de informações que precisam de verificação.",
+            "Fazer perguntas objetivas quando faltarem dados importantes.",
+            "Preservar dados pessoais e solicitar somente informações relevantes.",
+            "Encaminhar questões técnicas ou comerciais específicas à equipe."
+          ],
+          "must_not": [
+            "Inventar serviços, produtos, marcas ou especificações.",
+            "Inventar preços oficiais, estoque, prazos ou disponibilidade de agenda.",
+            "Confirmar atendimento fora da área sem autorização.",
+            "Prometer gratuidade ou abatimento da visita técnica sem confirmação.",
+            "Inventar condições específicas de garantia.",
+            "Afirmar que um orçamento foi aprovado sem confirmação.",
+            "Simular contato com a equipe quando isso não aconteceu."
+          ]
+        },
+        "agent_capabilities_status": {
+          "public_information_discovery": "descriptive",
+          "quote_request_preparation": "guidance_only",
+          "whatsapp_contact": "external_link",
+          "webmcp_tools": "not_implemented_or_not_verified",
+          "public_api": "not_identified",
+          "booking_or_quote_submission": "requires_human_confirmation"
+        },
+        "sources": [
+          "https://primorde.com.br/",
+          "https://wa.me/5573999868244"
+        ]
+      }
+    }
+  ]
+}
