@@ -32,6 +32,7 @@ body {
     img {
         display: block;
         max-width: 100%;
+        width: auto;
         height: auto;
         transition: transform .3s ease;
     }
