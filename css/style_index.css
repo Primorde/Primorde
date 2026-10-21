@@ -153,9 +153,9 @@ header {
     background-image:
     radial-gradient(
         circle,
-        rgba(0, 0, 0, 0.852) 0%,
-        rgba(0, 0, 0, 0.672) 0%,
-        rgba(0, 0, 0, 0.840) 100%
+        rgba(0, 0, 0, 0.767) 0%,
+        rgba(0, 0, 0, 0.605) 0%,
+        rgba(0, 0, 0, 0.756) 100%
     ),
     url('../img/header/fundo_banner_top.webp');
     background-size: cover;
