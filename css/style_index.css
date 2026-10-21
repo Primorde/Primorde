@@ -151,8 +151,13 @@ body *::-webkit-scrollbar-thumb {
 header {
     background-color: #333;
     background-image:
-        radial-gradient(circle, rgba(0,0,0,.75) 0%, rgba(0,0,0,.82) 50%, rgba(0,0,0,.90) 100%),
-        url('../img/header/fundo_banner_top.webp');
+    radial-gradient(
+        circle,
+        rgba(0, 0, 0, 0.68) 0%,
+        rgba(0, 0, 0, 0.74) 50%,
+        rgba(0, 0, 0, 0.81) 100%
+    ),
+    url('../img/header/fundo_banner_top.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
