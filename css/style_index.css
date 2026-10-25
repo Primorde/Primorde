@@ -310,6 +310,7 @@ header .btn_galeria_header img {
     margin-bottom: 2vw;
 }
 
+main ul,
 .texto_servicos p,
 .texto_atendimento p,
 .texto_avaliacao p,
@@ -338,11 +339,11 @@ header .btn_galeria_header img {
 }
 .section_servicos .t_h2{
     font-size: clamp(15.4px, 1.925vw, 31.9px);
-    margin: 4vw 0 2vw 0;
+    margin: 6vw 0 4vw 0;
 }
 
 .section_servicos  ul{
-    margin: 1vw 0 2vw 4vw;
+    margin: 3vw 0 4vw 6vw;
 }
 
 .section_servicos .titulo_servicos,
@@ -353,7 +354,7 @@ header .btn_galeria_header img {
     margin: 5vw 0 3vw 6%;
 }
 
-.section_servicos .texto_servicos {
+.section_servicos .texto_servicos{
     margin-top: 2.6vw;
 }
 
