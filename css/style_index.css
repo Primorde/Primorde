@@ -336,6 +336,14 @@ header .btn_galeria_header img {
 .section_servicos {
     margin-top: 5vw;
 }
+.section_servicos .t_h2{
+    font-size: clamp(15.4px, 1.925vw, 31.9px);
+    margin: 4vw 0 2vw 0;
+}
+
+.section_servicos  ul{
+    margin: 1vw 0 2vw 4vw;
+}
 
 .section_servicos .titulo_servicos,
 .section_produtos .titulo_produtos,
