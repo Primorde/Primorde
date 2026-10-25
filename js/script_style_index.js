@@ -11,6 +11,18 @@ function normalizarNomeCSS(nome) {
     return nome.replace(/[A-Z]/g, letra => `-${letra.toLowerCase()}`);
 }
 
+
+const cabecalho = document.querySelector(".cabecalho");
+const bottom_header = document.getElementById("bottom_header");
+
+function atualizarMargem() {
+    bottom_header.style.marginTop =
+        `${cabecalho.getBoundingClientRect().height + 30}px`;
+}
+
+
+
+
 const PROPRIEDADES_CSS_SEM_UNIDADE = new Set([
         "animation-iteration-count",
         "column-count",
@@ -934,6 +946,8 @@ window.addEventListener("load", function () {
        EXECUÇÃO INICIAL
        ===================================================== */
     atualizarLayoutResponsivo();
+    window.addEventListener("resize", atualizarMargem);
+    atualizarMargem();
     /* =====================================================
        ALTURA DAS ESTRELAS APÓS O CARREGAMENTO DO ASSET
        ===================================================== */
@@ -972,6 +986,9 @@ selecionar(window).on("resize", function () {
         resizeAtualizacaoTimeout = setTimeout(function () {
             resizeAtualizacaoTimeout = null;
             atualizarLayoutResponsivo();
+
+            window.addEventListener("resize", atualizarMargem);
+            atualizarMargem();
         }, INTERVALO_ATUALIZACAO_RESIZE);
     }
 
@@ -987,6 +1004,8 @@ selecionar(window).on("resize", function () {
 
         // Aplica o resultado final após a janela estabilizar.
         atualizarLayoutResponsivo();
+        window.addEventListener("resize", atualizarMargem);
+        atualizarMargem();
 
         resizeFinalTimeout = null;
     }, INTERVALO_FINAL_RESIZE);
