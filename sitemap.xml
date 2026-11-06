@@ -1,11 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-    <url>
-        <loc>https://primorde.com.br/</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-    </url>
+  <!-- 1. Página principal da Primorde -->
+  <url>
+    <loc>https://primorde.com.br/</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+
+  <!-- 2. Serviço principal: Construção e Reforma -->
+  <url>
+    <loc>https://primorde.com.br/construcao-e-reforma-em-teixeira-de-freitas-regiao.html</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+
+  <!-- 3. Catálogo de equipamentos e serviços -->
+  <url>
+    <loc>https://primorde.com.br/galeria-servicos-equipamentos-primorde.html</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+
+  <!-- 4. Alvenaria -->
+  <url>
+    <loc>https://primorde.com.br/alvenaria-em-teixeira-de-freitas-regiao.html</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+
+  <!-- 5. Acabamento -->
+  <url>
+    <loc>https://primorde.com.br/acabamento-em-teixeira-de-freitas-regiao.html</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+
+  <!-- 6. Cobertura -->
+  <url>
+    <loc>https://primorde.com.br/cobertura-em-teixeira-de-freitas-regiao.html</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+
+  <!-- 7. Instalações elétricas -->
+  <url>
+    <loc>https://primorde.com.br/eletrica-em-teixeira-de-freitas-regiao.html</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+
+  <!-- 8. Instalações hidráulicas -->
+  <url>
+    <loc>https://primorde.com.br/hidraulica-em-teixeira-de-freitas-regiao.html</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+
+  <!-- 9. Galeria de categorias -->
+  <url>
+    <loc>https://primorde.com.br/galeria-categoria.html</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
 
 </urlset>
