@@ -1,61 +1,56 @@
 /*
- * Conversão para JavaScript puro (sem dependência do jQuery).
- *
- * Esta pequena camada reproduz os métodos jQuery usados neste arquivo:
- * seleção múltipla, css, attr, width, height, classes, each e eventos
- * com namespaces. O código responsivo abaixo mantém os valores e a ordem
- * da lógica original.
+ * Versão Otimizada - Conversão para JavaScript puro (sem dependência do jQuery).
+ * Gerenciamento de performance, Core Web Vitals e eliminação de event listeners duplicados.
  */
 const eventosDOM = new WeakMap();
+
 function normalizarNomeCSS(nome) {
     return nome.replace(/[A-Z]/g, letra => `-${letra.toLowerCase()}`);
 }
-
 
 const cabecalho = document.querySelector(".cabecalho");
 const bottom_header = document.getElementById("bottom_header");
 
 function atualizarMargem() {
-    bottom_header.style.marginTop =
-        `${cabecalho.getBoundingClientRect().height + 30}px`;
+    if (bottom_header && cabecalho) {
+        bottom_header.style.marginTop = `${cabecalho.getBoundingClientRect().height + 30}px`;
+    }
 }
 
-
-
-
 const PROPRIEDADES_CSS_SEM_UNIDADE = new Set([
-        "animation-iteration-count",
-        "column-count",
-        "fill-opacity",
-        "flex",
-        "flex-grow",
-        "flex-shrink",
-        "font-weight",
-        "grid-area",
-        "grid-column",
-        "grid-column-end",
-        "grid-column-span",
-        "grid-column-start",
-        "grid-row",
-        "grid-row-end",
-        "grid-row-span",
-        "grid-row-start",
-        "line-height",
-        "opacity",
-        "order",
-        "orphans",
-        "scale",
-        "stop-opacity",
-        "stroke-dasharray",
-        "stroke-dashoffset",
-        "stroke-miterlimit",
-        "stroke-opacity",
-        "stroke-width",
-        "tab-size",
-        "widows",
-        "z-index",
-        "zoom"
+    "animation-iteration-count",
+    "column-count",
+    "fill-opacity",
+    "flex",
+    "flex-grow",
+    "flex-shrink",
+    "font-weight",
+    "grid-area",
+    "grid-column",
+    "grid-column-end",
+    "grid-column-span",
+    "grid-column-start",
+    "grid-row",
+    "grid-row-end",
+    "grid-row-span",
+    "grid-row-start",
+    "line-height",
+    "opacity",
+    "order",
+    "orphans",
+    "scale",
+    "stop-opacity",
+    "stroke-dasharray",
+    "stroke-dashoffset",
+    "stroke-miterlimit",
+    "stroke-opacity",
+    "stroke-width",
+    "tab-size",
+    "widows",
+    "z-index",
+    "zoom"
 ]);
+
 function valorCSSSemUnidade(nome) {
     return PROPRIEDADES_CSS_SEM_UNIDADE.has(nome);
 }
@@ -94,8 +89,6 @@ class ColecaoDOM {
     css(propriedade, valor) {
         if (typeof propriedade === "string") {
             const nomeCSS = normalizarNomeCSS(propriedade);
-            // O jQuery limpa a propriedade quando recebe uma string vazia
-            // e acrescenta px a valores numéricos que exigem unidade.
             if (valor === "") {
                 this.elementos.forEach(elemento => {
                     if (elemento.style) {
@@ -145,15 +138,12 @@ class ColecaoDOM {
     }
     dimensao(tipo) {
         const elemento = this.elementos[0];
-        // Assim como no jQuery, uma coleção vazia retorna undefined.
         if (!elemento) return undefined;
-        // jQuery mede a área visível do viewport, excluindo a barra de rolagem.
         if (elemento === window) {
             return tipo === "width"
                 ? document.documentElement.clientWidth
                 : document.documentElement.clientHeight;
         }
-        // Para document, o jQuery retorna a maior dimensão do documento.
         if (elemento === document) {
             const raiz = document.documentElement;
             const corpo = document.body;
@@ -172,11 +162,8 @@ class ColecaoDOM {
         if (!Number.isFinite(valorComputado)) {
             return elemento.getBoundingClientRect()[tipo];
         }
-        // .width()/.height() do jQuery retornam o content-box.
         if (estilos.boxSizing === "border-box") {
-            const lados = tipo === "width"
-                ? ["Left", "Right"]
-                : ["Top", "Bottom"];
+            const lados = tipo === "width" ? ["Left", "Right"] : ["Top", "Bottom"];
             const padding = lados.reduce(
                 (total, lado) => total + (parseFloat(estilos[`padding${lado}`]) || 0),
                 0
@@ -246,17 +233,13 @@ class ColecaoDOM {
             const registros = eventosDOM.get(elemento) || [];
             const manter = [];
             registros.forEach(registro => {
-                const tipoCorresponde =
-                    !tipoSolicitado || registro.tipoEvento === tipoSolicitado;
+                const tipoCorresponde = !tipoSolicitado || registro.tipoEvento === tipoSolicitado;
                 const namespacesCorrespondem = namespacesSolicitados.every(
                     namespace => registro.namespaces.includes(namespace)
                 );
                 const corresponde = tipoCorresponde && namespacesCorrespondem;
                 if (corresponde) {
-                    elemento.removeEventListener(
-                        registro.tipoEvento,
-                        registro.manipulador
-                    );
+                    elemento.removeEventListener(registro.tipoEvento, registro.manipulador);
                 } else {
                     manter.push(registro);
                 }
@@ -290,6 +273,7 @@ window.addEventListener("load", function () {
             ".catalogo_redes_sociais"
         )
     };
+
     const configuracoesResponsivas = [
         {
             min: 1070,
@@ -404,11 +388,9 @@ window.addEventListener("load", function () {
             carrosseisTextoWidth: "96%"
         }
     ];
+
     function aplicarConfiguracaoResponsiva(configuracao) {
-        elementos.logotipo.css(
-            "width",
-            configuracao.logotipoWidth
-        );
+        elementos.logotipo.css("width", configuracao.logotipoWidth);
         elementos.tituloBanner.css({
             width: configuracao.tituloBannerWidth,
             maxWidth: "100%",
@@ -430,28 +412,16 @@ window.addEventListener("load", function () {
             wordBreak: "normal",
             letterSpacing: "0.04em"
         });
-        elementos.btnsBanner.css(
-            "width",
-            configuracao.btnsBannerWidth
-        );
-        elementos.btnGaleria.css(
-            "margin-left",
-            configuracao.btnsBannerMargin
-        );
+        elementos.btnsBanner.css("width", configuracao.btnsBannerWidth);
+        elementos.btnGaleria.css("margin-left", configuracao.btnsBannerMargin);
         elementos.main.css({
             width: configuracao.mainWidth,
             marginLeft: configuracao.mainMarginLeft
         });
-        elementos.servicos.css(
-            "width",
-            configuracao.servicosWidth
-        );
-        elementos.carrosseisTexto.css(
-            "width",
-            configuracao.carrosseisTextoWidth
-        );
+        elementos.servicos.css("width", configuracao.servicosWidth);
+        elementos.carrosseisTexto.css("width", configuracao.carrosseisTextoWidth);
     }
-    // Aplica estilos compartilhados aos textos do atendimento.
+
     function ajustarTextoAtendimento(seletor, incluirAlignSelf = false) {
         selecionar(seletor).each(function () {
             const estilo = this.style;
@@ -464,6 +434,7 @@ window.addEventListener("load", function () {
             if (incluirAlignSelf) estilo.setProperty("align-self", "stretch", "important");
         });
     }
+
     function configurarBlocoAtendimentoDesktop(configuracao) {
         selecionar(".section_atendimento .bloco_atendimento").css({
             width: configuracao.carrosseisTextoWidth,
@@ -484,6 +455,7 @@ window.addEventListener("load", function () {
             boxSizing: "border-box"
         });
     }
+
     function configurarBlocoAtendimentoMobile() {
         selecionar(".section_atendimento .bloco_atendimento").css({ width: "96%", marginLeft: "2%" });
         selecionar(".section_atendimento .bloco1, .section_atendimento .bloco2").css({
@@ -494,31 +466,25 @@ window.addEventListener("load", function () {
         ajustarTextoAtendimento(".section_atendimento .texto_atendimento", true);
         ajustarTextoAtendimento(".section_atendimento .texto_atendimento p");
     }
+
     function configurarMenuAtendimentoDesktop() {
-        selecionar(".menu_atendimento").css(
-            "flex-wrap",
-            "nowrap"
-        );
+        selecionar(".menu_atendimento").css("flex-wrap", "nowrap");
         selecionar(".btn_solicitar_atendimento").css({
             marginLeft: "3%",
             marginTop: "0vw"
         });
     }
+
     function configurarMenuAtendimentoPequeno() {
-        selecionar(".menu_atendimento").css(
-            "flex-wrap",
-            "wrap"
-        );
+        selecionar(".menu_atendimento").css("flex-wrap", "wrap");
         selecionar(".btn_solicitar_atendimento").css({
             marginLeft: "0%",
             marginTop: "1vw"
         });
     }
+
     function configurarBotoesAtendimento(pequeno = false) {
-        const sufixo =
-            pequeno
-                ? "_pequeno"
-                : "";
+        const sufixo = pequeno ? "_pequeno" : "";
         selecionar(".btn_ver_no_google_maps img").attr(
             "src",
             `img/main/section_atendimento/btn_ver_no_google_maps${sufixo}.webp`
@@ -528,6 +494,7 @@ window.addEventListener("load", function () {
             `img/main/section_atendimento/btn_solicitar_atendimento${sufixo}.webp`
         );
     }
+
     function configurarBotoesAvaliacao(sufixo = "") {
         selecionar(".btn_avaliacao img").attr(
             "src",
@@ -538,96 +505,44 @@ window.addEventListener("load", function () {
             `img/main/section_avaliacao/btn_voltar_ao_topo${sufixo}.webp`
         );
     }
-    /* =====================================================
-       AVALIAÇÃO — ESTRELAS
-       ===================================================== */
-    function configurarEstrelas(
-        exibir,
-        pequena = false
-    ) {
-        const estrelas =
-            selecionar(".estrelas_avaliacao");
-        const imagem =
-            selecionar(".estrelas_avaliacao img");
-        if (
-            !estrelas.length ||
-            !imagem.length
-        ) {
+
+    function configurarEstrelas(exibir, pequena = false) {
+        const estrelas = selecionar(".estrelas_avaliacao");
+        const imagem = selecionar(".estrelas_avaliacao img");
+        if (!estrelas.length || !imagem.length) {
             return;
         }
         if (exibir) {
-            estrelas.removeClass(
-                "hidden"
-            );
-            const novoSrc =
-                pequena
-                    ? "img/main/section_avaliacao/estrelas_avaliacao_pequeno.webp"
-                    : "img/main/section_avaliacao/estrelas_avaliacao.webp";
-            const srcAtual =
-                imagem.attr("src") || "";
+            estrelas.removeClass("hidden");
+            const novoSrc = pequena
+                ? "img/main/section_avaliacao/estrelas_avaliacao_pequeno.webp"
+                : "img/main/section_avaliacao/estrelas_avaliacao.webp";
+            const srcAtual = imagem.attr("src") || "";
             if (!srcAtual.endsWith(novoSrc)) {
-                imagem.attr(
-                    "src",
-                    novoSrc
-                );
+                imagem.attr("src", novoSrc);
             }
-            /*
-             * Aguarda o novo asset terminar de carregar
-             * antes de recalcular a altura.
-             */
-            imagem
-                .off("load.avaliacao")
-                .on(
-                    "load.avaliacao",
-                    function () {
-                        if (
-                            elementos.btnAvaliacao.length
-                        ) {
-                            selecionar(this).css(
-                                "height",
-                                elementos.btnAvaliacao.height()
-                            );
-                        }
-                    }
-                );
-            /*
-             * Caso a imagem já esteja em cache.
-             */
-            if (
-                imagem[0] &&
-                imagem[0].complete &&
-                elementos.btnAvaliacao.length
-            ) {
-                imagem.css(
-                    "height",
-                    elementos.btnAvaliacao.height()
-                );
+            imagem.off("load.avaliacao").on("load.avaliacao", function () {
+                if (elementos.btnAvaliacao.length) {
+                    selecionar(this).css("height", elementos.btnAvaliacao.height());
+                }
+            });
+            if (imagem[0] && imagem[0].complete && elementos.btnAvaliacao.length) {
+                imagem.css("height", elementos.btnAvaliacao.height());
             }
         } else {
-            estrelas.addClass(
-                "hidden"
-            );
-            imagem.off(
-                "load.avaliacao"
-            );
+            estrelas.addClass("hidden");
+            imagem.off("load.avaliacao");
         }
     }
-    function configurarBanner(
-        paddingTop,
-        paddingBottom
-    ) {
+
+    function configurarBanner(paddingTop, paddingBottom) {
         selecionar(".banner_top").css({
             paddingTop,
             paddingBottom
         });
     }
-    /* =====================================================
-       INTERVENÇÃO RESPONSIVA ORIGINAL
-       ===================================================== */
-    function aplicarAjustesResponsivos(
-        larguraTela,
-        configuracao
-    ) {
+
+    function aplicarAjustesResponsivos(larguraTela, configuracao) {
         const elementosMargem = selecionar(
             ".banner_top, .titulo_servicos, .catalogo_servicos, .texto_servicos, " +
             ".titulo_produtos, .carrossel_produtos, .titulo_atendimento, " +
@@ -636,13 +551,8 @@ window.addEventListener("load", function () {
             ".catalogo_redes_sociais"
         );
         if (larguraTela > 595) {
-            elementosMargem.css(
-                "margin-left",
-                "6%"
-            );
-            configurarBlocoAtendimentoDesktop(
-                configuracao
-            );
+            elementosMargem.css("margin-left", "6%");
+            configurarBlocoAtendimentoDesktop(configuracao);
             configurarBotoesAvaliacao();
         } else {
             const elementosMargemMobile = selecionar(
@@ -652,363 +562,156 @@ window.addEventListener("load", function () {
                 ".texto_avaliacao, .menu_avaliacao, .titulo_redes_sociais, " +
                 ".catalogo_redes_sociais"
             );
-            elementosMargemMobile.css(
-                "margin-left",
-                "2%"
-            );
-            selecionar(".banner_top").css(
-                "margin-left",
-                "4%"
-            );
+            elementosMargemMobile.css("margin-left", "2%");
+            selecionar(".banner_top").css("margin-left", "4%");
         }
-        /* =================================================
-           ACIMA DE 880px
-           ================================================= */
+
         if (larguraTela > 880) {
-            configurarEstrelas(
-                true,
-                false
-            );
-            selecionar(".menu_avaliacao div").css(
-                "width",
-                "33.3333%"
-            );
-            /*
-             * Quando entra nessa faixa depois de outra faixa,
-             * restaura também a largura das estrelas.
-             */
-            selecionar(".estrelas_avaliacao").css(
-                "width",
-                "33.3333%"
-            );
-            selecionar(".btn_avaliacao").css(
-                "margin-right",
-                "0%"
-            );
+            configurarEstrelas(true, false);
+            selecionar(".menu_avaliacao div").css("width", "33.3333%");
+            selecionar(".estrelas_avaliacao").css("width", "33.3333%");
+            selecionar(".btn_avaliacao").css("margin-right", "0%");
             configurarMenuAtendimentoDesktop();
-            configurarBotoesAtendimento(
-                false
-            );
-            configurarBanner(
-                "2vw",
-                "5vw"
-            );
+            configurarBotoesAtendimento(false);
+            configurarBanner("2vw", "5vw");
             return;
         }
-        /* =================================================
-           ACIMA DE 785px
-           ================================================= */
         if (larguraTela > 785) {
-            configurarEstrelas(
-                true,
-                true
-            );
-            selecionar(".menu_avaliacao div").css(
-                "width",
-                "45%"
-            );
-            selecionar(".estrelas_avaliacao").css(
-                "width",
-                "20%"
-            );
-            selecionar(".btn_avaliacao").css(
-                "margin-right",
-                "0%"
-            );
+            configurarEstrelas(true, true);
+            selecionar(".menu_avaliacao div").css("width", "45%");
+            selecionar(".estrelas_avaliacao").css("width", "20%");
+            selecionar(".btn_avaliacao").css("margin-right", "0%");
             configurarMenuAtendimentoPequeno();
-            configurarBotoesAtendimento(
-                true
-            );
-            configurarBanner(
-                "2vw",
-                "8vw"
-            );
+            configurarBotoesAtendimento(true);
+            configurarBanner("2vw", "8vw");
             return;
         }
-        /* =================================================
-           ACIMA DE 700px
-           ================================================= */
         if (larguraTela > 700) {
-            configurarEstrelas(
-                true,
-                true
-            );
-            selecionar(".menu_avaliacao div").css(
-                "width",
-                "40%"
-            );
-            selecionar(".estrelas_avaliacao").css(
-                "width",
-                "20%"
-            );
-            selecionar(".btn_avaliacao").css(
-                "margin-right",
-                "0%"
-            );
+            configurarEstrelas(true, true);
+            selecionar(".menu_avaliacao div").css("width", "40%");
+            selecionar(".estrelas_avaliacao").css("width", "20%");
+            selecionar(".btn_avaliacao").css("margin-right", "0%");
             configurarMenuAtendimentoPequeno();
-            configurarBotoesAtendimento(
-                true
-            );
-            configurarBanner(
-                "4vw",
-                "12vw"
-            );
+            configurarBotoesAtendimento(true);
+            configurarBanner("4vw", "12vw");
             return;
         }
-        /* =================================================
-           ACIMA DE 595px
-           ================================================= */
         if (larguraTela > 595) {
-            configurarEstrelas(
-                false
-            );
-            selecionar(".menu_avaliacao div").css(
-                "width",
-                "45%"
-            );
-            selecionar(".estrelas_avaliacao").css(
-                "width",
-                "10%"
-            );
-            selecionar(".btn_avaliacao").css(
-                "margin-right",
-                "10%"
-            );
+            configurarEstrelas(false);
+            selecionar(".menu_avaliacao div").css("width", "45%");
+            selecionar(".estrelas_avaliacao").css("width", "10%");
+            selecionar(".btn_avaliacao").css("margin-right", "10%");
             configurarMenuAtendimentoPequeno();
-            configurarBotoesAtendimento(
-                true
-            );
-            configurarBotoesAvaliacao(
-                "_2"
-            );
-            configurarBanner(
-                "4vw",
-                "12vw"
-            );
+            configurarBotoesAtendimento(true);
+            configurarBotoesAvaliacao("_2");
+            configurarBanner("4vw", "12vw");
             return;
         }
-        /* =================================================
-           ATÉ 595px
-           ================================================= */
+
         configurarBlocoAtendimentoMobile();
-        configurarEstrelas(
-            false
-        );
-        selecionar(".menu_avaliacao div").css(
-            "width",
-            "50%"
-        );
-        selecionar(".estrelas_avaliacao").css(
-            "width",
-            "0%"
-        );
-        selecionar(".btn_avaliacao").css(
-            "margin-right",
-            "0%"
-        );
-        selecionar(".menu_atendimento").css(
-            "flex-wrap",
-            "nowrap"
-        );
+        configurarEstrelas(false);
+        selecionar(".menu_avaliacao div").css("width", "50%");
+        selecionar(".estrelas_avaliacao").css("width", "0%");
+        selecionar(".btn_avaliacao").css("margin-right", "0%");
+        selecionar(".menu_atendimento").css("flex-wrap", "nowrap");
         selecionar(".btn_solicitar_atendimento").css({
             marginLeft: "3%",
             marginTop: "0vw"
         });
-        configurarBotoesAtendimento(
-            false
-        );
-        configurarBotoesAvaliacao(
-            "_3"
-        );
-        configurarBanner(
-            "4vw",
-            "12vw"
-        );
+        configurarBotoesAtendimento(false);
+        configurarBotoesAvaliacao("_3");
+        configurarBanner("4vw", "12vw");
     }
-    /* =====================================================
-       ALTURAS DINÂMICAS
-       ===================================================== */
-    function ajustarAlturasDinamicas(
-        dispositivo,
-        larguraTela,
-        configuracao
-    ) {
-        aplicarAjustesResponsivos(
-            larguraTela,
-            configuracao
-        );
+
+    function ajustarAlturasDinamicas(dispositivo, larguraTela, configuracao) {
+        aplicarAjustesResponsivos(larguraTela, configuracao);
         if (dispositivo === "desktop") {
-            const alturaCabecalho =
-                elementos.logotipo.height() + 15;
-            elementos.btnsTopo.css({
-                height: alturaCabecalho
-            });
+            const alturaCabecalho = elementos.logotipo.height() + 15;
+            elementos.btnsTopo.css({ height: alturaCabecalho });
             if (
                 elementos.estrelas.length &&
                 elementos.btnAvaliacao.length &&
                 !selecionar(".estrelas_avaliacao").hasClass("hidden")
             ) {
-                elementos.estrelas.css({
-                    height:
-                        elementos.btnAvaliacao.height()
-                });
+                elementos.estrelas.css({ height: elementos.btnAvaliacao.height() });
             }
         }
     }
-    /* =====================================================
-       TAMANHO DOS CARDS
-       ===================================================== */
-    function ajustarTamanhoCards(
-        larguraTela,
-        dispositivo
-    ) {
-        const card =
-            selecionar(".card-img");
-        let width =
-            "44%";
+
+    function ajustarTamanhoCards(larguraTela, dispositivo) {
+        const card = selecionar(".card-img");
+        let width = "44%";
         if (dispositivo === "desktop") {
             if (larguraTela >= 975) {
-                width =
-                    "16.6%";
-                selecionar(".copyright img").css({
-                    width: "50%",
-                    marginLeft: "25%"
-                });
+                width = "16.6%";
+                selecionar(".copyright img").css({ width: "50%", marginLeft: "25%" });
             } else if (larguraTela >= 880) {
-                width =
-                    "16.6%";
-                selecionar(".copyright img").css({
-                    width: "60%",
-                    marginLeft: "20%"
-                });
+                width = "16.6%";
+                selecionar(".copyright img").css({ width: "60%", marginLeft: "20%" });
             } else if (larguraTela >= 785) {
-                width =
-                    "21.82115%";
-                selecionar(".copyright img").css({
-                    width: "70%",
-                    marginLeft: "15%"
-                });
+                width = "21.82115%";
+                selecionar(".copyright img").css({ width: "70%", marginLeft: "15%" });
             } else if (larguraTela >= 595) {
-                width =
-                    "21.82115%";
-                selecionar(".copyright img").css({
-                    width: "80%",
-                    marginLeft: "10%"
-                });
+                width = "21.82115%";
+                selecionar(".copyright img").css({ width: "80%", marginLeft: "10%" });
             } else if (larguraTela >= 405) {
-                width =
-                    "44%";
-                selecionar(".copyright img").css({
-                    width: "95%",
-                    marginLeft: "2.5%"
-                });
+                width = "44%";
+                selecionar(".copyright img").css({ width: "95%", marginLeft: "2.5%" });
             }
         }
-        card.css(
-            "width",
-            width
-        );
-        const alturaCabecalho =
-            selecionar(".cabecalho").height() +
-            "px";
-        selecionar(".banner_top").css(
-            "margin-top",
-            alturaCabecalho
-        );
+        card.css("width", width);
+        const alturaCabecalho = selecionar(".cabecalho").height() + "px";
+        selecionar(".banner_top").css("margin-top", alturaCabecalho);
     }
-    /* =====================================================
-       EXECUÇÃO PRINCIPAL
-       ===================================================== */
+
     function atualizarLayoutResponsivo() {
-        const tela =
-            selecionar(window).width();
-        const configuracao =
-            configuracoesResponsivas.find(
-                configuracao =>
-                    tela >= configuracao.min
-            );
+        const tela = selecionar(window).width();
+        const configuracao = configuracoesResponsivas.find(config => tela >= config.min);
         if (configuracao) {
-            aplicarConfiguracaoResponsiva(
-                configuracao
-            );
+            aplicarConfiguracaoResponsiva(configuracao);
         }
-        ajustarAlturasDinamicas(
-            "desktop",
-            tela,
-            configuracao
-        );
-        ajustarTamanhoCards(
-            tela,
-            "desktop"
-        );
+        ajustarAlturasDinamicas("desktop", tela, configuracao);
+        ajustarTamanhoCards(tela, "desktop");
     }
-    /* =====================================================
-       EXECUÇÃO INICIAL
-       ===================================================== */
+
+    // Execução Inicial
     atualizarLayoutResponsivo();
-    window.addEventListener("resize", atualizarMargem);
     atualizarMargem();
-    /* =====================================================
-       ALTURA DAS ESTRELAS APÓS O CARREGAMENTO DO ASSET
-       ===================================================== */
-    elementos.estrelas
-        .off("load.avaliacaoFinal")
-        .on(
-            "load.avaliacaoFinal",
-            function () {
-                if (
-                    !selecionar(".estrelas_avaliacao").hasClass(
-                        "hidden"
-                    ) &&
-                    elementos.btnAvaliacao.length
-                ) {
-                    selecionar(this).css(
-                        "height",
-                        elementos.btnAvaliacao.height()
-                    );
-                }
-            }
-        );
-    
-/* =====================================================
-   RESPONSIVIDADE AO REDIMENSIONAR A JANELA
-   ===================================================== */
 
-let resizeAtualizacaoTimeout = null;
-let resizeFinalTimeout = null;
+    // Listener global único para redimensionamento da margem do cabeçalho
+    window.addEventListener("resize", atualizarMargem);
 
-const INTERVALO_ATUALIZACAO_RESIZE = 100;
-const INTERVALO_FINAL_RESIZE = 250;
+    elementos.estrelas.off("load.avaliacaoFinal").on("load.avaliacaoFinal", function () {
+        if (
+            !selecionar(".estrelas_avaliacao").hasClass("hidden") &&
+            elementos.btnAvaliacao.length
+        ) {
+            selecionar(this).css("height", elementos.btnAvaliacao.height());
+        }
+    });
 
-selecionar(window).on("resize", function () {
-    // Limita as atualizações durante o redimensionamento.
-    if (resizeAtualizacaoTimeout === null) {
-        resizeAtualizacaoTimeout = setTimeout(function () {
-            resizeAtualizacaoTimeout = null;
-            atualizarLayoutResponsivo();
+    // Tratamento otimizado de debounce/throttle para redimensionamento responsivo
+    let resizeAtualizacaoTimeout = null;
+    let resizeFinalTimeout = null;
+    const INTERVALO_ATUALIZACAO_RESIZE = 100;
+    const INTERVALO_FINAL_RESIZE = 250;
 
-            window.addEventListener("resize", atualizarMargem);
-            atualizarMargem();
-        }, INTERVALO_ATUALIZACAO_RESIZE);
-    }
-
-    // Reinicia o temporizador para detectar o fim do redimensionamento.
-    clearTimeout(resizeFinalTimeout);
-
-    resizeFinalTimeout = setTimeout(function () {
-        // Cancela uma atualização intermediária ainda pendente.
-        if (resizeAtualizacaoTimeout !== null) {
-            clearTimeout(resizeAtualizacaoTimeout);
-            resizeAtualizacaoTimeout = null;
+    window.addEventListener("resize", function () {
+        if (resizeAtualizacaoTimeout === null) {
+            resizeAtualizacaoTimeout = setTimeout(function () {
+                resizeAtualizacaoTimeout = null;
+                atualizarLayoutResponsivo();
+            }, INTERVALO_ATUALIZACAO_RESIZE);
         }
 
-        // Aplica o resultado final após a janela estabilizar.
-        atualizarLayoutResponsivo();
-        window.addEventListener("resize", atualizarMargem);
-        atualizarMargem();
-
-        resizeFinalTimeout = null;
-    }, INTERVALO_FINAL_RESIZE);
-});
-
+        clearTimeout(resizeFinalTimeout);
+        resizeFinalTimeout = setTimeout(function () {
+            if (resizeAtualizacaoTimeout !== null) {
+                clearTimeout(resizeAtualizacaoTimeout);
+                resizeAtualizacaoTimeout = null;
+            }
+            atualizarLayoutResponsivo();
+            resizeFinalTimeout = null;
+        }, INTERVALO_FINAL_RESIZE);
+    });
 });
