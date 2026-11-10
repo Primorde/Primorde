@@ -13,10 +13,14 @@
     <lastmod>2026-11-06</lastmod>
   </url>
 
-  <!-- 3. Catálogo de equipamentos e serviços -->
+  <!-- 3. Catálogo de equipamentos -->
   <url>
-    <loc>https://primorde.com.br/galeria-servicos-equipamentos-primorde.html</loc>
-    <lastmod>2026-11-06</lastmod>
+    <loc>https://primorde.com.br/catalogo-equipamentos-primorde.html</loc>
+    <lastmod>2026-11-09</lastmod>
+  </url>
+  <url>
+    <loc>https://primorde.com.br/categoria-equipamentos-primorde.html</loc>
+    <lastmod>2026-11-09</lastmod>
   </url>
 
   <!-- 4. Alvenaria -->
@@ -49,7 +53,13 @@
     <lastmod>2026-11-06</lastmod>
   </url>
 
-  <!-- 9. Galeria de categorias -->
+  <!-- 9. Galeria -->
+
+  <url>
+    <loc>https://primorde.com.br/galeria-servicos-equipamentos-primorde.html</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+
   <url>
     <loc>https://primorde.com.br/galeria-categoria.html</loc>
     <lastmod>2026-11-06</lastmod>
