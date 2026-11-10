@@ -1,0 +1,378 @@
+/* =========================================================
+   Catálogo de Equipamentos Primorde
+   Estilos ajustados para total integração visual com o index.
+   ========================================================= */
+
+
+/* Seção de Introdução */
+.catalogo-intro {
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+}
+
+.catalogo-eyebrow {
+    color: #666666;
+    font-size: clamp(12px, 1.1vw, 16px);
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: 1vw;
+}
+
+
+/* Botão Voltar (Estilo Primorde) */
+.catalogo-voltar,
+.categoria-voltar a {
+    display: inline-flex;
+    margin-left: 6%;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    padding: 0.8rem 1.6rem;
+    background-color: #000000;
+    border: 1px solid #000000;
+    color: #ffffff !important;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(13px, 1.1vw, 16px);
+    font-weight: 700;
+    text-decoration: none !important;
+    cursor: pointer;
+    transition: transform .2s ease, background-color .2s ease, opacity .2s ease;
+
+}
+
+.catalogo-voltar:hover,
+.categoria-voltar a:hover {
+    background-color: #333333;
+    transform: scale(.98);
+    opacity: 0.95;
+    text-decoration: none !important;
+}
+
+/* Cabeçalho de Seções do Catálogo */
+.catalogo-section-heading {
+    margin-bottom: 2.5vw;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 1.2vw;
+}
+
+.catalogo-section-heading .titulo_produtos {
+    margin: 0.5vw 0 0 0 !important;
+}
+
+/* Grid de Categorias */
+.catalogo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8vw;
+    padding-bottom: 5vw;
+}
+
+/* Card da Categoria */
+.catalogo-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 220px;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 .5px 5px rgba(1, 1, 1, .08);
+    padding: clamp(20px, 2.2vw, 32px);
+    color: #050505;
+    text-decoration: none !important;
+    transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+
+.catalogo-card:hover,
+.catalogo-card:focus-visible {
+    border-color: #000000;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
+    outline: none;
+}
+
+.catalogo-card-numero {
+    color: #888888;
+    font-size: clamp(11px, 0.9vw, 14px);
+    font-weight: 700;
+    letter-spacing: .1em;
+}
+
+.catalogo-card-titulo {
+    display: block;
+    margin-top: 16px;
+    color: #050505;
+    font-size: clamp(17px, 1.5vw, 22px);
+    font-weight: 900;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+}
+
+.catalogo-card-descricao {
+    margin-top: 10px;
+    color: #333333;
+    font-size: clamp(13px, 1.1vw, 15px);
+    line-height: 1.5;
+}
+
+.catalogo-card-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    color: white;
+    font-size: clamp(13px, 1.1vw, 15px);
+    font-weight: 700;
+    background: black;
+}
+
+.g-breadcrumb {
+    margin: 1rem 0 1.5rem;
+    font-size: .95rem;
+    color: #555;
+    margin-left: 6%;
+}
+
+.g-breadcrumb a {
+    color: inherit;
+}
+
+.catalogo-card-link span {
+    font-size: 1.1rem;
+    transition: transform .2s ease;
+}
+
+.catalogo-card:hover .catalogo-card-link span {
+    transform: translateX(4px);
+}
+
+/* Breadcrumb na página de Categoria */
+.catalogo-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding-top: 2vw;
+    margin-top: 10vw;
+    margin-bottom: 2vw;
+    color: #666666;
+    font-size: clamp(12px, 1vw, 14px);
+}
+
+.catalogo-breadcrumb a {
+    color: #000000;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.catalogo-breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Conteúdo da Categoria */
+.categoria-intro {
+    padding-top: 1vw;
+    padding-bottom: 2vw;
+}
+
+.categoria-conteudo {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(24px, 4vw, 56px);
+    align-items: start;
+    padding-bottom: 4vw;
+}
+
+.categoria-imagem {
+    display: flex;
+    min-height: 360px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: 1px dashed rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+    color: #555555;
+    text-align: center;
+    padding: 24px;
+    border-radius: 4px;
+}
+
+.categoria-imagem span {
+    font-size: clamp(16px, 1.4vw, 20px);
+    font-weight: 700;
+    color: #111111;
+}
+
+.categoria-imagem small {
+    max-width: 250px;
+    font-size: clamp(12px, 1vw, 14px);
+    line-height: 1.5;
+    color: #666666;
+}
+
+.categoria-detalhes .titulo_produtos {
+    margin: 0 0 1vw 0 !important;
+}
+
+.categoria-detalhes > p:not(.catalogo-eyebrow) {
+    margin-bottom: 2vw;
+    color: #333333;
+    font-size: clamp(14px, 1.3vw, 18px);
+    line-height: 1.6;
+}
+
+/* Painel Expansível (Acordeão) */
+.equipamento-acordeao {
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 2.5vw;
+}
+
+.equipamento-acordeao-botao {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    border: 0;
+    background: transparent;
+    padding: 18px 0;
+    color: #050505;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: clamp(15px, 1.2vw, 18px);
+    font-weight: 700;
+    text-align: left;
+}
+
+.equipamento-acordeao-botao:focus-visible {
+    outline: 2px solid #000000;
+    outline-offset: 4px;
+}
+
+.equipamento-acordeao-icone {
+    color: #000000;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.equipamento-acordeao-painel {
+    padding-bottom: 18px;
+}
+
+.equipamento-acordeao-painel section {
+    padding: 12px 0 8px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.equipamento-acordeao-painel section:first-child {
+    border-top: none;
+}
+
+.equipamento-acordeao-painel h3 {
+    margin: 0 0 6px 0;
+    color: #111111;
+    font-size: clamp(14px, 1.1vw, 16px);
+    font-weight: 700;
+}
+
+.equipamento-acordeao-painel p {
+    margin: 0;
+    color: #444444;
+    font-size: clamp(13px, 1.05vw, 15px);
+    line-height: 1.6;
+}
+
+/* Botão de Solicitação de Atendimento (WhatsApp - Estilo Primorde) */
+.categoria-atendimento {
+    width: 100%;
+    margin-top: 2vw;
+}
+
+.categoria-atendimento .solicitar_informacoes {
+    background: black;
+    color: white;
+    padding: 15px;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+}
+
+.categoria-atendimento .btn_solicitar_atendimento .btn-atendimento-equipamento {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    min-height: 54px;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 24px;
+    border: 1px solid #000000;
+    background-color: #000000;
+    color: #ffffff !important;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(14px, 1.2vw, 17px);
+    font-weight: 700;
+    line-height: 1.35;
+    text-align: center;
+    text-decoration: none !important;
+    cursor: pointer;
+    transition: transform .2s ease, background-color .2s ease, opacity .2s ease;
+}
+
+.categoria-atendimento .btn_solicitar_atendimento .btn-atendimento-equipamento:hover {
+    background-color: #333333;
+    opacity: 0.95;
+    transform: scale(.98);
+}
+
+.categoria-atendimento .btn_solicitar_atendimento .btn-atendimento-equipamento:focus-visible {
+    outline: 2px solid #000000;
+    outline-offset: 4px;
+}
+
+.categoria-voltar {
+    border-top: 1px solid #e0e0e0;
+    padding: 2vw 0 4vw;
+}
+
+/* Responsividade conforme Breakpoints do Projeto Primorde */
+@media (max-width: 992px) {
+    .catalogo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5vw;
+    }
+}
+
+@media (max-width: 850px) {
+    .categoria-conteudo {
+        grid-template-columns: 1fr;
+    }
+    .categoria-imagem {
+        min-height: 260px;
+    }
+}
+
+@media (max-width: 595px) {
+    .catalogo-page-container {
+        width: 92%;
+        padding-top: 48px;
+    }
+    .catalogo-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .catalogo-card {
+        min-height: 180px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .catalogo-card,
+    .catalogo-voltar,
+    .categoria-voltar a,
+    .categoria-atendimento .btn_solicitar_atendimento .btn-atendimento-equipamento {
+        transition: none;
+    }
+}
