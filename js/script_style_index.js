@@ -672,14 +672,12 @@ window.addEventListener("load", function () {
         }
         ajustarAlturasDinamicas("desktop", tela, configuracao);
         ajustarTamanhoCards(tela, "desktop");
+        // Mantém a margem sincronizada no mesmo ciclo do layout responsivo.
+        atualizarMargem();
     }
 
-    // Execução Inicial
+    // Execução inicial do layout e da margem em um único ciclo.
     atualizarLayoutResponsivo();
-    atualizarMargem();
-
-    // Listener global único para redimensionamento da margem do cabeçalho
-    window.addEventListener("resize", atualizarMargem);
 
     elementos.estrelas.off("load.avaliacaoFinal").on("load.avaliacaoFinal", function () {
         if (
