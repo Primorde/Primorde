@@ -187,6 +187,7 @@ header .logotipo {
 
 header .logotipo img {
     height: auto;
+    cursor: pointer;
 }
 
 header .cabecalho_action {
