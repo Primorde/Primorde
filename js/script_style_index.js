@@ -2,6 +2,13 @@
  * Versão Otimizada - Conversão para JavaScript puro (sem dependência do jQuery).
  * Gerenciamento de performance, Core Web Vitals e eliminação de event listeners duplicados.
  */
+
+document.querySelectorAll('.logotipo').forEach(logotipo => {
+  logotipo.addEventListener('click', () => {
+    window.location.href = 'https://primorde.com.br/';
+  });
+});
+
 const eventosDOM = new WeakMap();
 
 function normalizarNomeCSS(nome) {
