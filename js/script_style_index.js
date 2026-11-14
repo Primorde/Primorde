@@ -3,7 +3,7 @@
  * Gerenciamento de performance, Core Web Vitals e eliminação de event listeners duplicados.
  */
 
-document.querySelectorAll('.logotipo').forEach(logotipo => {
+document.querySelectorAll('.logotipo img').forEach(logotipo => {
   logotipo.addEventListener('click', () => {
     window.location.href = 'https://primorde.com.br/';
   });
