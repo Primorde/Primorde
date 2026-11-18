@@ -1,521 +1,165 @@
-
-/* ==========================================================
-   GALERIA PRIMORDE
-   Carrega as imagens cadastradas em galeria.json.
-   ========================================================== */
+/* PRIMORDE — GALERIA UNIFICADA
+   Catálogo incorporado ao JS: não depende de fetch/galeria.json.
+*/
 (() => {
   'use strict';
-
-  const ARQUIVO_JSON = './galeria.json';
-  const LOTE = 6;
+  const LOTE = 5;
+  const CATALOGO = {"construcao-reforma":{"alvenaria":["img/galeria/construcao-reforma/alvenaria/alvenaria-bitorneira.webp","img/galeria/construcao-reforma/alvenaria/alvenaria-compactador-solo.webp","img/galeria/construcao-reforma/alvenaria/alvenaria-construcao-bases-fundacoes-pilares-colunas-vigas-vergas-muros-paredes.webp","img/galeria/construcao-reforma/alvenaria/alvenaria-construcao-bases-fundacoes-pilares-colunas-vigas-vergas.webp","img/galeria/construcao-reforma/alvenaria/alvenaria-construcao-bases-fundacoes.webp","img/galeria/construcao-reforma/alvenaria/alvenaria-construcao-calcada.webp","img/galeria/construcao-reforma/alvenaria/alvenaria-construcao-colunas-pilares-vigas-vergas.webp","img/galeria/construcao-reforma/alvenaria/alvenaria-construcao-colunas-pilares.webp","img/galeria/construcao-reforma/alvenaria/alvenaria-construcao-colunas-vigas.webp","img/galeria/construcao-reforma/alvenaria/alvenaria-construcao-paredes-muros.webp","img/galeria/construcao-reforma/alvenaria/alvenaria-construcao-sapatas.webp","img/galeria/construcao-reforma/alvenaria/alvenaria-demolicao.webp","img/galeria/construcao-reforma/alvenaria/alvenaria-piso-lona-plastico-malha-pop.webp","img/galeria/construcao-reforma/alvenaria/alvenaria-remocao-residuos.webp"],"cobertura":["img/galeria/construcao-reforma/cobertura/cobertura-construcao-telhado-teixeira-de-freitas.webp","img/galeria/construcao-reforma/cobertura/cobertura-construcao-telhado.webp","img/galeria/construcao-reforma/cobertura/cobertura-inseticida-manutencao-limpeza-telhado.webp","img/galeria/construcao-reforma/cobertura/cobertura-inseticida-manutencao-telhado.webp","img/galeria/construcao-reforma/cobertura/cobertura-manutencao-telhado.webp","img/galeria/construcao-reforma/cobertura/cobertura-rufos-pingadeiras.webp","img/galeria/construcao-reforma/cobertura/cobertura-torca-calha-manutecao-telhado.webp"],"eletrica":["img/galeria/construcao-reforma/eletrica/eletrica-iluminacao-fita-de-led-sobrepor-dom-decor.webp","img/galeria/construcao-reforma/eletrica/eletrica-iluminacao-fita-de-led-sobrepor.webp","img/galeria/construcao-reforma/eletrica/eletrica-iluminacao-primorde.webp","img/galeria/construcao-reforma/eletrica/eletrica-instalacao-arandela-primorde.webp","img/galeria/construcao-reforma/eletrica/eletrica-instalacao-arandela-teixeira-defreitas-primorde.webp","img/galeria/construcao-reforma/eletrica/eletrica-instalacao-arandela-teixeira-defreitas.webp","img/galeria/construcao-reforma/eletrica/eletrica-instalacao-arandela.webp","img/galeria/construcao-reforma/eletrica/eletrica-instalacao-balizadoes-de-led-jardim-teixeira-de-freitas-primorde.webp","img/galeria/construcao-reforma/eletrica/eletrica-instalacao-balizadoes-de-led-jardim-teixeira-de-freitas.webp","img/galeria/construcao-reforma/eletrica/eletrica-instalacao-canhao-de-led-teixeira-de-freitas-primorde.webp","img/galeria/construcao-reforma/eletrica/eletrica-instalacao-canhao-de-led-teixeira-de-freitas.webp","img/galeria/construcao-reforma/eletrica/eletrica-instalacao-canhao-de-led-teixeira-defreitas.webp","img/galeria/construcao-reforma/eletrica/eletrica-instalacao-canhao-de-led.webp","img/galeria/construcao-reforma/eletrica/eletrica-instalacao-espeto-de-led-jardim-teixeira-de-freitas.webp","img/galeria/construcao-reforma/eletrica/eletrica-instalacao-espeto-de-led-teixeira-de-freitas.webp","img/galeria/construcao-reforma/eletrica/eletrica-instalacao-interruptores.webp","img/galeria/construcao-reforma/eletrica/eletrica-instalacao-tomadas.webp","img/galeria/construcao-reforma/eletrica/eletrica-montagem-quadro-disjuntores.webp","img/galeria/construcao-reforma/eletrica/eletrica-primorde.webp","img/galeria/construcao-reforma/eletrica/eletrica-protecao-teixeira-de-freitas.webp","img/galeria/construcao-reforma/eletrica/eletrica-quadro-disjuntores-monofasico-teixeira-de-freitas.webp","img/galeria/construcao-reforma/eletrica/eletrica-quadro-disjuntores-monofasico.webp","img/galeria/construcao-reforma/eletrica/eletrica-quadro-disjuntores-trifasico-primorde.webp","img/galeria/construcao-reforma/eletrica/eletrica-quadro-disjuntores-trifasico.webp","img/galeria/construcao-reforma/eletrica/eletrica-quadro-disjuntores.webp","img/galeria/construcao-reforma/eletrica/eletrica-reforma-quadro-disjuntores.webp"],"hidraulica":["img/galeria/construcao-reforma/hidraulica/hidraulica-construcao-rede-esgoto.webp","img/galeria/construcao-reforma/hidraulica/hidraulica-instalacao-caixa-de-inspecao-caixa-de-gordura.webp","img/galeria/construcao-reforma/hidraulica/hidraulica-instalacao-filtro-para-caixa-dagua-primorde.webp","img/galeria/construcao-reforma/hidraulica/hidraulica-instalacao-filtro-para-caixa-dagua.webp","img/galeria/construcao-reforma/hidraulica/hidraulica-instalacao-rede-esgoto.webp","img/galeria/construcao-reforma/hidraulica/hidraulica-instalacao-torneira-monocomando.webp","img/galeria/construcao-reforma/hidraulica/hidraulica-instalacao-torneira.webp","img/galeria/construcao-reforma/hidraulica/hidraulica-manutencao-caixa-de-gordura-caixa-de-inspecao.webp","img/galeria/construcao-reforma/hidraulica/hidraulica-manutencao-caixa-de-inspecao-caixa-de-gordura.webp","img/galeria/construcao-reforma/hidraulica/hidraulica-sistema-de-filtracao.webp","img/galeria/construcao-reforma/hidraulica/hidraulica-tubulacao-esgoto.webp","img/galeria/construcao-reforma/hidraulica/hidraulica-vaso-aclopado-monobloco.webp","img/galeria/construcao-reforma/hidraulica/hidraulica-vaso-sanitario.webp"],"acabamento":["img/galeria/construcao-reforma/acabamento/acabamento-envernizacao-porta-madeira.webp","img/galeria/construcao-reforma/acabamento/acabamento-envernizacao-telhado-primorde.webp","img/galeria/construcao-reforma/acabamento/acabamento-envernizacao-telhado.webp","img/galeria/construcao-reforma/acabamento/acabamento-instalacao-inox-primorde.webp","img/galeria/construcao-reforma/acabamento/acabamento-instalacao-inox.webp","img/galeria/construcao-reforma/acabamento/acabamento-pintura-recidencial-teixeira-de-freitas-primorde.webp","img/galeria/construcao-reforma/acabamento/acabamento-pintura-recidencial.webp","img/galeria/construcao-reforma/acabamento/acabamento-pintura.webp","img/galeria/construcao-reforma/acabamento/acabamento-revestimento-piso-reforma.webp","img/galeria/construcao-reforma/acabamento/acabamento-textura-arenato-arenito-pedras-naturais.webp"]},"instalacao-manutencao":{"motores-portao-automatico":["img/galeria/instalacao-manutencao/motores-portao-automatico/motores-portao-automatico-basculante-instalacao-materiais-inclusos.webp","img/galeria/instalacao-manutencao/motores-portao-automatico/motores-portao-automatico-garantia.webp","img/galeria/instalacao-manutencao/motores-portao-automatico/motores-portao-automatico-instalacao-materiais-inclusos-teixeira-de-freitas.webp","img/galeria/instalacao-manutencao/motores-portao-automatico/motores-portao-automatico-instalacao-materiais-inclusos.webp","img/galeria/instalacao-manutencao/motores-portao-automatico/motores-portao-automatico-manutencao.webp","img/galeria/instalacao-manutencao/motores-portao-automatico/motores-portao-automatico-ppa.webp","img/galeria/instalacao-manutencao/motores-portao-automatico/motores-portao-automatico-rossi.webp","img/galeria/instalacao-manutencao/motores-portao-automatico/motores-portao-automatico-teixeira-de-freitas.webp"],"porteiros-eletronicos":["img/galeria/instalacao-manutencao/porteiros-eletronicos/porteiros-eletronicos-coletivo-teixeira-de-freitas.webp","img/galeria/instalacao-manutencao/porteiros-eletronicos/porteiros-eletronicos-monofone-teixeira-de-freitas.webp","img/galeria/instalacao-manutencao/porteiros-eletronicos/porteiros-eletronicos-primorde.webp","img/galeria/instalacao-manutencao/porteiros-eletronicos/porteiros-eletronicos-teixeira-de-freitas-primorde.webp","img/galeria/instalacao-manutencao/porteiros-eletronicos/porteiros-eletronicos-teixeira-de-freitas.webp","img/galeria/instalacao-manutencao/porteiros-eletronicos/porteiros-eletronicos-tela-teixeira-de-freitas.webp","img/galeria/instalacao-manutencao/porteiros-eletronicos/porteiros-eletronicos-video-porteiro-teixeira-de-freitas.webp"],"fechaduras-eletronicas":["img/galeria/instalacao-manutencao/fechaduras-eletronicas/fechaduras-eletronicas-instalacao-e-materiais-inclusos-teixeira-de-freitas.webp","img/galeria/instalacao-manutencao/fechaduras-eletronicas/fechaduras-eletronicas-instalacao-e-materiais-inclusos.webp","img/galeria/instalacao-manutencao/fechaduras-eletronicas/fechaduras-eletronicas-instalacao.webp","img/galeria/instalacao-manutencao/fechaduras-eletronicas/fechaduras-eletronicas-trava-eletrica-primorde.webp","img/galeria/instalacao-manutencao/fechaduras-eletronicas/fechaduras-eletronicas-trava-eletrica.webp"],"padroes-de-entrada":["img/galeria/instalacao-manutencao/padroes-de-entrada/padroes-de-entrada-instalacao-coelba-neoenergia.webp","img/galeria/instalacao-manutencao/padroes-de-entrada/padroes-de-entrada-instalacao-monofasico.webp","img/galeria/instalacao-manutencao/padroes-de-entrada/padroes-de-entrada-instalacao-montagem.webp","img/galeria/instalacao-manutencao/padroes-de-entrada/padroes-de-entrada-instalacao-primorde-teixeira-de-freitas.webp","img/galeria/instalacao-manutencao/padroes-de-entrada/padroes-de-entrada-instalacao.webp","img/galeria/instalacao-manutencao/padroes-de-entrada/padroes-de-entrada-manutencao-trifasico-teixeira-de-freitas-primorde.webp","img/galeria/instalacao-manutencao/padroes-de-entrada/padroes-de-entrada-manutencao-trifasico.webp"],"coifas-depuradores":["img/galeria/instalacao-manutencao/coifas-depuradores/coifa-exaustor-instalacao-chanine-inox-materiais-inclusos.webp","img/galeria/instalacao-manutencao/coifas-depuradores/coifa-exaustor-instalacao-chanine-inox.webp","img/galeria/instalacao-manutencao/coifas-depuradores/coifa-exaustor.webp","img/galeria/instalacao-manutencao/coifas-depuradores/coifa-exaustores-churrasqueiras.webp","img/galeria/instalacao-manutencao/coifas-depuradores/coifa-ilha-instalacao.webp","img/galeria/instalacao-manutencao/coifas-depuradores/coifa-ilha-primorde.webp","img/galeria/instalacao-manutencao/coifas-depuradores/coifa-ilha-teixeira-de-freitas.webp","img/galeria/instalacao-manutencao/coifas-depuradores/coifa-ilha.webp","img/galeria/instalacao-manutencao/coifas-depuradores/coifa-instalacao-materiais-inclusos.webp","img/galeria/instalacao-manutencao/coifas-depuradores/coifa-instalacao-primorde.webp","img/galeria/instalacao-manutencao/coifas-depuradores/coifa-parede-instalacao.webp","img/galeria/instalacao-manutencao/coifas-depuradores/coifa-parede.webp","img/galeria/instalacao-manutencao/coifas-depuradores/coifa-primorde.webp"],"cooktops-fogoes-inducao":["img/galeria/instalacao-manutencao/cooktops-fogoes-inducao/cooktops-fogoes-inducao-instalacao-primorde.webp","img/galeria/instalacao-manutencao/cooktops-fogoes-inducao/cooktops-fogoes-inducao-instalacao-teixeira-de-freitas-primorde.webp","img/galeria/instalacao-manutencao/cooktops-fogoes-inducao/cooktops-fogoes-inducao-instalacao.webp"],"caixas-dagua":["img/galeria/instalacao-manutencao/caixas-dagua/caixas-dagua-instalacao-primorde-teixeira-de-freitas.webp","img/galeria/instalacao-manutencao/caixas-dagua/caixas-dagua-instalacao-primorde.webp","img/galeria/instalacao-manutencao/caixas-dagua/caixas-dagua-manutencao-primorde.webp"],"chuveiros-eletricos":["img/galeria/instalacao-manutencao/chuveiros-eletricos/chuveiros-eletricos-instalacao.webp","img/galeria/instalacao-manutencao/chuveiros-eletricos/chuveiros-eletricos-manutencao.webp","img/galeria/instalacao-manutencao/chuveiros-eletricos/chuveiros-eletricos-primorde.webp","img/galeria/instalacao-manutencao/chuveiros-eletricos/chuveiros-eletricos-teixeira-de-freitas-ba-primorde.webp","img/galeria/instalacao-manutencao/chuveiros-eletricos/chuveiros-eletricos-teixeira-de-freitas-primorde-instalacao.webp","img/galeria/instalacao-manutencao/chuveiros-eletricos/chuveiros-eletricos-teixeira-de-freitas-primorde.webp","img/galeria/instalacao-manutencao/chuveiros-eletricos/chuveiros-eletricos-teixeira-de-freitas-regiao-primorde.webp","img/galeria/instalacao-manutencao/chuveiros-eletricos/chuveiros-eletricos-teixeira-de-freitas.webp","img/galeria/instalacao-manutencao/chuveiros-eletricos/chuveiros-eletricos.webp"],"pressurizador":["img/galeria/instalacao-manutencao/pressurizador/pressurizador-instalacao-manutencao-teixeira-de-freitas-ba.webp","img/galeria/instalacao-manutencao/pressurizador/pressurizador-instalacao-manutencao-teixeira-de-freitas.webp","img/galeria/instalacao-manutencao/pressurizador/pressurizador-instalacao-materiais-inclusos-teixeira-de-freitas.webp","img/galeria/instalacao-manutencao/pressurizador/pressurizador-instalacao-pl-20.webp","img/galeria/instalacao-manutencao/pressurizador/pressurizador-instalacao-teixeira-de-freitas-regiao.webp","img/galeria/instalacao-manutencao/pressurizador/pressurizador-instalacao-teixeira-de-freitas.webp","img/galeria/instalacao-manutencao/pressurizador/pressurizador-instalacao.webp","img/galeria/instalacao-manutencao/pressurizador/pressurizador.webp"]}};
+  const scriptEl = document.currentScript;
+  const SITE_ROOT = scriptEl && scriptEl.src
+    ? new URL('../', scriptEl.src)
+    : new URL('./', window.location.href);
 
   const GRUPOS = {
     'construcao-reforma': {
-      titulo: 'Construção e Reforma',
+      titulo: 'Construção e Reformas',
       categorias: {
-        alvenaria: { nome: 'Alvenaria' },
-        cobertura: { nome: 'Cobertura' },
-        eletrica: { nome: 'Elétrica' },
-        hidraulica: { nome: 'Hidráulica' },
-        acabamento: { nome: 'Acabamento' }
+        alvenaria: 'Alvenaria', cobertura: 'Cobertura', eletrica: 'Elétrica',
+        hidraulica: 'Hidráulica', acabamento: 'Acabamento'
       }
     },
     'instalacao-manutencao': {
-      titulo: 'Instalação e Manutenção de Equipamentos',
+      titulo: 'Instalação e Manutenção',
       categorias: {
-        'motores-portao-automatico': { nome: 'Motores para Portão Automático' },
-        'porteiros-eletronicos': { nome: 'Porteiros Eletrônicos' },
-        'fechaduras-eletronicas': { nome: 'Fechaduras Eletrônicas' },
-        'padroes-de-entrada': { nome: 'Padrões de Entrada' },
-        'coifas-depuradores': { nome: 'Coifas e Depuradores' },
-        'cooktops-fogoes-inducao': { nome: 'Cooktops e Fogões de Indução' },
-        'caixas-dagua': { nome: 'Caixas d’Água' },
-        'chuveiros-eletricos': { nome: 'Chuveiros Elétricos' },
-        pressurizador: { nome: 'Pressurizadores' }
+        'motores-portao-automatico': 'Motores para Portão Automático',
+        'porteiros-eletronicos': 'Porteiros Eletrônicos',
+        'fechaduras-eletronicas': 'Fechaduras Eletrônicas',
+        'padroes-de-entrada': 'Padrões de Entrada',
+        'coifas-depuradores': 'Coifas e Depuradores',
+        'cooktops-fogoes-inducao': 'Cooktops e Fogões de Indução',
+        'caixas-dagua': 'Caixas d’Água',
+        'chuveiros-eletricos': 'Chuveiros Elétricos',
+        pressurizador: 'Pressurizadores'
       }
     }
   };
 
-  const CONTEUDO_CATEGORIAS = {
-    "construcao-reforma|alvenaria": {
-        "titulo": "Alvenaria",
-        "description": "Fotos de serviços de alvenaria da Primorde em Teixeira de Freitas: fundações, pilares, vigas, paredes, muros, calçadas e outras etapas de construção.",
-        "intro": "Esta seleção reúne registros de trabalhos de alvenaria, incluindo bases e fundações, pilares, colunas, vigas, vergas, paredes, muros, calçadas e atividades de demolição e preparação. As imagens mostram diferentes etapas de execução realizadas pela Primorde em Teixeira de Freitas e região."
-    },
-    "construcao-reforma|cobertura": {
-        "titulo": "Cobertura",
-        "description": "Veja fotos de construção e manutenção de telhados, calhas, rufos e pingadeiras realizadas pela Primorde em Teixeira de Freitas e região.",
-        "intro": "Nesta categoria estão reunidos registros de serviços relacionados a coberturas, como construção e manutenção de telhados, instalação e manutenção de calhas, rufos e pingadeiras. Confira as imagens dos trabalhos realizados pela Primorde em Teixeira de Freitas e região."
-    },
-    "construcao-reforma|eletrica": {
-        "titulo": "Elétrica",
-        "description": "Fotos de instalações elétricas da Primorde: iluminação LED, arandelas, tomadas, interruptores e quadros de disjuntores em Teixeira de Freitas.",
-        "intro": "A galeria apresenta registros de serviços elétricos, incluindo instalação de iluminação com LED, arandelas, balizadores e espetos para jardim, além de tomadas, interruptores, quadros de disjuntores e itens de proteção. São trabalhos realizados pela Primorde em Teixeira de Freitas e região."
-    },
-    "construcao-reforma|hidraulica": {
-        "titulo": "Hidráulica",
-        "description": "Confira fotos de instalações e manutenções hidráulicas: redes de esgoto, torneiras, filtros, caixas de inspeção e vasos sanitários.",
-        "intro": "Nesta seleção você encontra registros de serviços hidráulicos, como instalação de tubulações e redes de esgoto, caixas de inspeção e de gordura, filtros para caixa d’água, torneiras e vasos sanitários. Veja exemplos de trabalhos realizados pela Primorde em Teixeira de Freitas e região."
-    },
-    "construcao-reforma|acabamento": {
-        "titulo": "Acabamento",
-        "description": "Fotos de serviços de acabamento da Primorde em Teixeira de Freitas, com pintura, envernização, revestimentos e instalação de elementos em inox.",
-        "intro": "Esta categoria reúne imagens de etapas de acabamento, incluindo pintura residencial, envernização de portas e telhados, aplicação de revestimentos e instalação de elementos em inox. Confira os registros dos serviços realizados pela Primorde em Teixeira de Freitas e região."
-    },
-    "instalacao-manutencao|motores-portao-automatico": {
-        "titulo": "Motores para Portão Automático",
-        "description": "Veja fotos de instalação e manutenção de motores para portões automáticos realizadas pela Primorde em Teixeira de Freitas e região.",
-        "intro": "Aqui estão reunidos registros de instalação e manutenção de motores para portões automáticos, incluindo modelos basculantes e equipamentos identificados nas imagens. Confira exemplos dos serviços realizados pela Primorde em Teixeira de Freitas e região."
-    },
-    "instalacao-manutencao|porteiros-eletronicos": {
-        "titulo": "Porteiros Eletrônicos",
-        "description": "Fotos de instalação de porteiros eletrônicos, sistemas coletivos, monofones e vídeo porteiros pela Primorde em Teixeira de Freitas.",
-        "intro": "Esta galeria mostra registros de serviços com porteiros eletrônicos, incluindo equipamentos coletivos, modelos com monofone e vídeo porteiros com tela. Veja imagens de instalações realizadas pela Primorde em Teixeira de Freitas e região."
-    },
-    "instalacao-manutencao|fechaduras-eletronicas": {
-        "titulo": "Fechaduras Eletrônicas",
-        "description": "Confira fotos de instalação de fechaduras eletrônicas e travas elétricas realizadas pela Primorde em Teixeira de Freitas e região.",
-        "intro": "Nesta categoria você encontra registros de instalação de fechaduras eletrônicas e travas elétricas. As imagens documentam exemplos de equipamentos e materiais utilizados nos serviços realizados pela Primorde em Teixeira de Freitas e região."
-    },
-    "instalacao-manutencao|padroes-de-entrada": {
-        "titulo": "Padrões de Entrada",
-        "description": "Fotos de instalação e manutenção de padrões de entrada monofásicos e trifásicos realizadas pela Primorde em Teixeira de Freitas.",
-        "intro": "A seleção reúne registros de montagem, instalação e manutenção de padrões de entrada de energia, incluindo configurações monofásicas e trifásicas. Confira exemplos dos serviços realizados pela Primorde em Teixeira de Freitas e região."
-    },
-    "instalacao-manutencao|coifas-depuradores": {
-        "titulo": "Coifas e Depuradores",
-        "description": "Veja fotos de instalação de coifas, exaustores e depuradores, incluindo modelos de parede e ilha, pela Primorde em Teixeira de Freitas.",
-        "intro": "Nesta galeria estão reunidos registros de instalação de coifas e exaustores, com exemplos de modelos de parede e de ilha. Confira imagens dos equipamentos e dos serviços realizados pela Primorde em Teixeira de Freitas e região."
-    },
-    "instalacao-manutencao|cooktops-fogoes-inducao": {
-        "titulo": "Cooktops e Fogões de Indução",
-        "description": "Confira fotos de instalação de cooktops e fogões de indução realizadas pela Primorde em Teixeira de Freitas e região.",
-        "intro": "Esta categoria apresenta registros fotográficos de instalações de cooktops e fogões de indução. Veja os exemplos de serviços documentados pela Primorde em Teixeira de Freitas e região."
-    },
-    "instalacao-manutencao|caixas-dagua": {
-        "titulo": "Caixas d’Água",
-        "description": "Fotos de instalação e manutenção de caixas d’água realizadas pela Primorde em Teixeira de Freitas e região.",
-        "intro": "Aqui você encontra registros de serviços de instalação e manutenção de caixas d’água. As imagens mostram exemplos dos trabalhos realizados pela Primorde em Teixeira de Freitas e região."
-    },
-    "instalacao-manutencao|chuveiros-eletricos": {
-        "titulo": "Chuveiros Elétricos",
-        "description": "Veja fotos de instalação e manutenção de chuveiros elétricos realizadas pela Primorde em Teixeira de Freitas e região.",
-        "intro": "Esta galeria reúne registros de instalação e manutenção de chuveiros elétricos, com imagens de diferentes serviços documentados pela Primorde em Teixeira de Freitas e região."
-    },
-    "instalacao-manutencao|pressurizador": {
-        "titulo": "Pressurizadores",
-        "description": "Confira fotos de instalação e manutenção de pressurizadores de água realizadas pela Primorde em Teixeira de Freitas e região.",
-        "intro": "Nesta categoria estão reunidos registros de instalação e manutenção de pressurizadores, incluindo imagens de equipamentos e materiais utilizados nos serviços. Confira os trabalhos realizados pela Primorde em Teixeira de Freitas e região."
+  const embaralhar = lista => {
+    const copia = [...lista];
+    for (let i = copia.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copia[i], copia[j]] = [copia[j], copia[i]];
     }
-};
+    return copia;
+  };
 
-  let catalogo = null;
-
-  function normalizarLista(valor) {
-    if (!Array.isArray(valor)) return [];
-    return valor.filter(item =>
-      typeof item === 'string' && item.trim() !== ''
-    );
-  }
-
-  async function carregarCatalogo() {
-    const resposta = await fetch(ARQUIVO_JSON, { cache: 'no-cache' });
-
-    if (!resposta.ok) {
-      throw new Error(`Não foi possível carregar galeria.json (HTTP ${resposta.status}).`);
-    }
-
-    const dados = await resposta.json();
-
-    if (!dados || typeof dados !== 'object' || Array.isArray(dados)) {
-      throw new Error('O conteúdo de galeria.json não possui uma estrutura válida.');
-    }
-
-    return dados;
-  }
-
-  function nomeCategoria(grupoId, categoriaId) {
-    return GRUPOS[grupoId]?.categorias[categoriaId]?.nome || categoriaId;
-  }
-
-  function descricaoArquivo(caminho) {
-    const nome = caminho.split('/').pop().split('\\').pop();
-    const semExtensao = nome.replace(/\.(avif|webp|jpe?g|png|gif)$/i, '');
-
-    const descricao = semExtensao
-      .replace(/[_-]+/g, ' ')
-      .replace(/\s+/g, ' ')
-      .replace(/\b(img|dsc|dscn|photo|foto)\s*\d*\b/gi, '')
-      .trim();
-
-    return descricao && !/^\d+$/.test(descricao) ? descricao : '';
-  }
-
-  function obterFotos(grupoId, categoriaId) {
-    const categoria = nomeCategoria(grupoId, categoriaId);
-
-    return normalizarLista(catalogo?.[grupoId]?.[categoriaId]).map(caminho => {
-      const detalhe = descricaoArquivo(caminho);
-
-      const alt = detalhe
-        ? `${categoria}: ${detalhe}. Serviço realizado pela Primorde em Teixeira de Freitas e região.`
-        : `Registro fotográfico de ${categoria}, serviço realizado pela Primorde em Teixeira de Freitas e região.`;
-
-      return { src: caminho, alt };
-    });
-  }
-
-  function obterFotosDoGrupo(grupoId) {
-    const categorias = Object.keys(GRUPOS[grupoId].categorias);
-    const listas = categorias.map(categoriaId =>
-      obterFotos(grupoId, categoriaId)
-    );
-
-    const resultado = [];
-    const maiorLista = Math.max(0, ...listas.map(lista => lista.length));
-
-    for (let indice = 0; indice < maiorLista; indice++) {
-      listas.forEach(lista => {
-        if (lista[indice]) resultado.push(lista[indice]);
-      });
-    }
-
-    return resultado;
-  }
-
-  function criarFoto(foto) {
+  function montarImagem(caminho, categoria) {
+    const src = new URL(caminho, SITE_ROOT).href;
     const link = document.createElement('a');
     link.className = 'g-photo-link';
-    link.href = foto.src;
+    link.href = src;
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
-    link.setAttribute(
-      'aria-label',
-      `${foto.alt}. Abrir imagem em tamanho original`
-    );
-
     const img = document.createElement('img');
     img.className = 'g-photo';
-    img.src = foto.src;
-    img.alt = foto.alt;
-    img.width = 900;
-    img.height = 1200;
-    img.loading = 'lazy';
+    img.src = src;
+    img.alt = categoria + ' — serviço realizado pela Primorde';
+    img.loading = 'eager';
     img.decoding = 'async';
-
-    img.addEventListener('error', () => {
-      link.remove();
-      link.dispatchEvent(
-        new CustomEvent('galeria:imagem-invalida', { bubbles: true })
-      );
-    }, { once: true });
-
+    img.onerror = () => {
+      console.error('[Primorde] Imagem não encontrada:', src);
+      link.classList.add('g-photo-error');
+      img.alt = 'Imagem indisponível: ' + categoria;
+    };
     link.appendChild(img);
     return link;
   }
 
-  function criarCarregador(container, fotos, botao, mensagemVazia = null) {
-    let indice = 0;
-
-    function carregarLote() {
-      const fragmento = document.createDocumentFragment();
-      const fim = Math.min(indice + LOTE, fotos.length);
-
-      for (; indice < fim; indice++) {
-        fragmento.appendChild(criarFoto(fotos[indice]));
-      }
-
-      container.appendChild(fragmento);
-
-      if (botao) botao.hidden = indice >= fotos.length;
-
-      if (mensagemVazia && fotos.length === 0) {
-        mensagemVazia.hidden = false;
-      }
-    }
-
-    container.addEventListener('galeria:imagem-invalida', () => {
-      window.setTimeout(() => {
-        if (
-          mensagemVazia &&
-          indice >= fotos.length &&
-          !container.querySelector('.g-photo-link')
-        ) {
-          mensagemVazia.hidden = false;
-        }
-      }, 0);
-    });
-
-    if (botao) {
-      botao.addEventListener('click', carregarLote);
-    }
-
-    carregarLote();
-  }
-
-  function iniciarAcordeoes() {
-    document.querySelectorAll('.g-accordion').forEach(botao => {
-      if (botao.dataset.galeriaAtivo === 'true') return;
-      botao.dataset.galeriaAtivo = 'true';
-
-      botao.addEventListener('click', () => {
-        const aberto = botao.getAttribute('aria-expanded') === 'true';
-        const painelId = botao.getAttribute('aria-controls');
-        const painel = document.getElementById(painelId);
-
-        if (!painel) return;
-
-        botao.setAttribute('aria-expanded', String(!aberto));
-        painel.hidden = aberto;
-
-        const icone = botao.querySelector('.g-chevron');
-        if (icone) icone.textContent = aberto ? '＋' : '−';
-      });
-    });
-  }
-
-  function iniciarHome() {
-    document.querySelectorAll('[data-preview]').forEach(container => {
-      const grupoId = container.dataset.preview;
-      if (!GRUPOS[grupoId]) return;
-
-      const botao = document.querySelector(
-        `[data-load-more="${grupoId}"]`
-      );
-
-      const fotos = obterFotosDoGrupo(grupoId);
-      criarCarregador(container, fotos, botao);
-
-      if (fotos.length === 0) {
-        const aviso = document.createElement('p');
-        aviso.className = 'g-empty-message';
-        aviso.textContent = 'As fotos desta seção serão adicionadas em breve.';
-        container.insertAdjacentElement('afterend', aviso);
-      }
-    });
-
-    iniciarAcordeoes();
-  }
-
-
-  function definirMeta(seletor, atributo, valor) {
-    let elemento = document.querySelector(seletor);
-    if (!elemento) {
-      elemento = document.createElement('meta');
-      const correspondencia = seletor.match(/\[(name|property)="([^"]+)"\]/);
-      if (!correspondencia) return;
-      elemento.setAttribute(correspondencia[1], correspondencia[2]);
-      document.head.appendChild(elemento);
-    }
-    elemento.setAttribute(atributo, valor);
-  }
-
-  function definirCanonical(url) {
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.rel = 'canonical';
-      document.head.appendChild(canonical);
-    }
-    canonical.href = url;
-  }
-
-  function atualizarSeoCategoria(grupoId, categoriaId, categoria, grupo, conteudo, fotos) {
-    const url = new URL(window.location.href);
-    url.search = '';
-    url.searchParams.set('grupo', grupoId);
-    url.searchParams.set('categoria', categoriaId);
-    url.hash = '';
-    const urlCanonica = url.href;
-
-    const tituloSeo = `${categoria.nome} | Fotos de Serviços | Primorde`;
-    const descricaoSeo = conteudo?.description ||
-      `Confira fotos de serviços de ${categoria.nome.toLowerCase()} realizados pela Primorde em Teixeira de Freitas e região.`;
-
-    document.title = tituloSeo;
-    definirMeta('meta[name="description"]', 'content', descricaoSeo);
-    definirCanonical(urlCanonica);
-
-    definirMeta('meta[property="og:type"]', 'content', 'website');
-    definirMeta('meta[property="og:locale"]', 'content', 'pt_BR');
-    definirMeta('meta[property="og:site_name"]', 'content', 'Primorde');
-    definirMeta('meta[property="og:title"]', 'content', tituloSeo);
-    definirMeta('meta[property="og:description"]', 'content', descricaoSeo);
-    definirMeta('meta[property="og:url"]', 'content', urlCanonica);
-    definirMeta('meta[property="og:image"]', 'content', 'https://primorde.com.br/logotipo.webp');
-
-    definirMeta('meta[name="twitter:card"]', 'content', 'summary_large_image');
-    definirMeta('meta[name="twitter:title"]', 'content', tituloSeo);
-    definirMeta('meta[name="twitter:description"]', 'content', descricaoSeo);
-    definirMeta('meta[name="twitter:image"]', 'content', 'https://primorde.com.br/logotipo.webp');
-
-    definirMeta('meta[name="robots"]', 'content',
-      fotos.length > 0 ? 'index,follow,max-image-preview:large' : 'noindex,follow');
-
-    const paginaId = `${urlCanonica}#webpage`;
-    const breadcrumbId = `${urlCanonica}#breadcrumb`;
-    const dadosEstruturados = {
-      '@context': 'https://schema.org',
-      '@graph': [
-        {
-          '@type': 'CollectionPage',
-          '@id': paginaId,
-          url: urlCanonica,
-          name: tituloSeo,
-          description: descricaoSeo,
-          inLanguage: 'pt-BR',
-          isPartOf: { '@id': 'https://primorde.com.br/#website' },
-          about: {
-            '@type': 'Thing',
-            name: `${categoria.nome} — ${grupo.titulo}`
-          },
-          publisher: { '@id': 'https://primorde.com.br/#empresa' },
-          breadcrumb: { '@id': breadcrumbId },
-          mainEntity: {
-            '@type': 'ItemList',
-            numberOfItems: fotos.length,
-            itemListElement: fotos.map((foto, indice) => ({
-              '@type': 'ListItem',
-              position: indice + 1,
-              item: {
-                '@type': 'ImageObject',
-                contentUrl: new URL(foto.src, window.location.href).href,
-                caption: foto.alt
-              }
-            }))
-          }
-        },
-        {
-          '@type': 'BreadcrumbList',
-          '@id': breadcrumbId,
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              name: 'Início',
-              item: 'https://primorde.com.br/'
-            },
-            {
-              '@type': 'ListItem',
-              position: 2,
-              name: 'Galeria de Fotos',
-              item: 'https://primorde.com.br/galeria-servicos-equipamentos-primorde.html'
-            },
-            {
-              '@type': 'ListItem',
-              position: 3,
-              name: grupo.titulo,
-              item: 'https://primorde.com.br/galeria-categoria.html?grupo=' +
-                encodeURIComponent(grupoId)
-            },
-            {
-              '@type': 'ListItem',
-              position: 4,
-              name: categoria.nome,
-              item: urlCanonica
-            }
-          ]
-        }
-      ]
-    };
-
-    let scriptSchema = document.getElementById('dados-estruturados-categoria');
-    if (!scriptSchema) {
-      scriptSchema = document.createElement('script');
-      scriptSchema.id = 'dados-estruturados-categoria';
-      scriptSchema.type = 'application/ld+json';
-      document.head.appendChild(scriptSchema);
-    }
-    scriptSchema.textContent = JSON.stringify(dadosEstruturados);
-  }
-
-  function iniciarPaginaCategoria() {
-    const parametros = new URLSearchParams(window.location.search);
-    const grupoId = parametros.get('grupo');
-    const categoriaId = parametros.get('categoria');
-
-    const grupo = GRUPOS[grupoId];
-    const categoria = grupo?.categorias[categoriaId];
-
-    const titulo = document.querySelector('[data-category-title]');
-    const descricao = document.querySelector('[data-category-description]');
-    const breadcrumb = document.querySelector('[data-breadcrumb-category]');
-    const container = document.querySelector('[data-category-gallery]');
-    const botao = document.querySelector('[data-category-load-more]');
-    const vazio = document.querySelector('[data-empty-message]');
-
-    if (!titulo || !descricao || !breadcrumb || !container || !botao || !vazio) {
+  function iniciarGrupo(grupoId) {
+    const cfg = GRUPOS[grupoId];
+    const catalogo = CATALOGO[grupoId] || {};
+    const grade = document.querySelector(`[data-preview="${grupoId}"]`);
+    const botao = document.querySelector(`[data-load-more="${grupoId}"]`);
+    const lista = document.querySelector(`[data-category-list="${grupoId}"]`);
+    const total = document.querySelector(`[data-total-remaining="${grupoId}"]`);
+    if (!grade || !botao || !lista || !total) {
+      console.error('[Primorde] Estrutura HTML incompleta para:', grupoId);
       return;
     }
 
-    if (!grupo || !categoria) {
-      document.title = 'Categoria não encontrada | Galeria Primorde';
-      definirMeta('meta[name="robots"]', 'content', 'noindex,follow');
-      titulo.textContent = 'Categoria não encontrada';
-      descricao.textContent =
-        'Não foi possível localizar esta categoria. Volte à galeria principal e escolha uma categoria disponível.';
-      breadcrumb.textContent = 'Categoria não encontrada';
-      botao.hidden = true;
-      vazio.hidden = false;
-      return;
+    const categorias = Object.entries(cfg.categorias).map(([id,nome]) => ({
+      id, nome, restantes: embaralhar(Array.isArray(catalogo[id]) ? catalogo[id].filter(Boolean) : [])
+    }));
+
+    function atualizar() {
+      const qtd = categorias.reduce((s,c) => s + c.restantes.length, 0);
+      total.textContent = `${qtd} ${qtd === 1 ? 'foto ainda disponível' : 'fotos ainda disponíveis'}`;
+      lista.replaceChildren();
+      categorias.forEach(cat => {
+        const card = document.createElement('button');
+        card.type = 'button';
+        card.className = 'g-category-card';
+        card.disabled = cat.restantes.length === 0;
+        card.setAttribute('aria-label', `Carregar até 5 fotos de ${cat.nome}. ${cat.restantes.length} restantes.`);
+        const h3 = document.createElement('h3');
+        h3.className = 'g-category-heading';
+        h3.textContent = cat.nome;
+        const p = document.createElement('p');
+        p.className = 'g-category-count';
+        p.textContent = `${cat.restantes.length} ${cat.restantes.length === 1 ? 'foto restante' : 'fotos restantes'}`;
+        card.append(h3,p);
+        card.addEventListener('click', () => carregarCategoria(cat));
+        lista.appendChild(card);
+      });
+      botao.hidden = qtd === 0;
+      botao.disabled = qtd === 0;
     }
 
-    const conteudo = CONTEUDO_CATEGORIAS[`${grupoId}|${categoriaId}`];
-    titulo.textContent = categoria.nome;
-    breadcrumb.textContent = categoria.nome;
-
-    const fotos = obterFotos(grupoId, categoriaId);
-    descricao.textContent = conteudo?.intro ||
-      `Confira registros fotográficos de ${categoria.nome.toLowerCase()} realizados pela Primorde em Teixeira de Freitas e região.`;
-
-    const breadcrumbGrupo = document.querySelector('[data-breadcrumb-group]');
-    if (breadcrumbGrupo) {
-      breadcrumbGrupo.textContent = grupo.titulo;
-      breadcrumbGrupo.hidden = false;
-    }
-
-    atualizarSeoCategoria(grupoId, categoriaId, categoria, grupo, conteudo, fotos);
-    criarCarregador(container, fotos, botao, vazio);
-  }
-
-  async function iniciarGaleria() {
-    try {
-      catalogo = await carregarCatalogo();
-
-      if (document.querySelector('[data-galeria-home]')) {
-        iniciarHome();
-      }
-
-      if (document.querySelector('[data-category-gallery]')) {
-        iniciarPaginaCategoria();
-      }
-    } catch (erro) {
-      console.error('[Galeria Primorde]', erro);
-
-      document.querySelectorAll(
-        '[data-preview], [data-category-gallery]'
-      ).forEach(container => {
+    function anexarFotos(itens) {
+      embaralhar(itens).forEach(item => grade.appendChild(montarImagem(item.caminho,item.categoria.nome)));
+      atualizar();
+      if (!grade.children.length) {
         const aviso = document.createElement('p');
         aviso.className = 'g-empty-message';
-        aviso.textContent =
-          'Não foi possível carregar as fotos agora. Verifique o arquivo galeria.json.';
-        container.appendChild(aviso);
-      });
-
-      const botaoCategoria =
-        document.querySelector('[data-category-load-more]');
-
-      if (botaoCategoria) botaoCategoria.hidden = true;
-
-      document.querySelectorAll('[data-load-more]').forEach(botao => {
-        botao.hidden = true;
-      });
+        aviso.textContent = 'Nenhuma foto cadastrada nesta seção.';
+        grade.appendChild(aviso);
+      }
     }
+
+    function carregarCategoria(cat) {
+      const lote = [];
+      for (let i = 0; i < LOTE && cat.restantes.length; i++) {
+        lote.push({categoria:cat, caminho:cat.restantes.shift()});
+      }
+      anexarFotos(lote);
+    }
+
+    function carregarLote(inicial) {
+      const lote = [];
+      if (inicial) {
+        embaralhar(categorias.filter(c => c.restantes.length)).slice(0,LOTE)
+          .forEach(c => lote.push({categoria:c, caminho:c.restantes.shift()}));
+      }
+      while (lote.length < LOTE) {
+        const disponiveis = categorias.filter(c => c.restantes.length);
+        if (!disponiveis.length) break;
+        const c = disponiveis[Math.floor(Math.random()*disponiveis.length)];
+        lote.push({categoria:c, caminho:c.restantes.shift()});
+      }
+      anexarFotos(lote);
+    }
+
+    atualizar();
+    carregarLote(true);
+    botao.addEventListener('click', () => carregarLote(false));
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', iniciarGaleria, { once: true });
-  } else {
-    iniciarGaleria();
+  function iniciar() {
+    Object.keys(GRUPOS).forEach(id => {
+      const lista = document.querySelector(`[data-category-list="${id}"]`);
+      if (lista) {
+        lista.replaceChildren();
+        Object.values(GRUPOS[id].categorias).forEach(nome => {
+          const card=document.createElement('button'); card.type='button'; card.className='g-category-card'; card.disabled=true;
+          const h3=document.createElement('h3'); h3.className='g-category-heading'; h3.textContent=nome;
+          const p=document.createElement('p'); p.className='g-category-count'; p.textContent='Preparando fotos…';
+          card.append(h3,p); lista.appendChild(card);
+        });
+      }
+    });
+    Object.keys(GRUPOS).forEach(iniciarGrupo);
   }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', iniciar, {once:true});
+  else iniciar();
 })();
