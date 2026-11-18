@@ -513,3 +513,123 @@
 button {
     border-radius: 0 !important;
 }
+
+
+/* ==========================================================
+   GALERIA UNIFICADA — LOTES ALEATÓRIOS E CONTADORES
+   ========================================================== */
+.gallery-page .gallery-content {
+    width: min(88%, 1440px);
+    margin-inline: auto;
+}
+.gallery-page .titulo_servicos {
+    margin: 2rem 0 1.5rem;
+}
+.gallery-page .gallery-content > p {
+    line-height: 1.65;
+    margin: 0 0 1rem;
+}
+.gallery-page .g-group {
+    margin: 2.5rem 0;
+}
+.gallery-page .g-remaining {
+    margin: .5rem 0 1rem;
+    font-weight: 700;
+    color: #333;
+}
+.gallery-page .g-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+    gap: clamp(.6rem, 1.3vw, 1rem);
+}
+.gallery-page .g-photo-link {
+    display: block;
+    overflow: hidden;
+    background: #f3f3f3;
+    border: 1px solid #e2e2e2;
+}
+.gallery-page .g-photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: contain;
+    height: auto;
+    background: #f3f3f3;
+    transition: transform .25s ease;
+}
+.gallery-page .g-photo-link:hover .g-photo {
+    transform: scale(1.035);
+}
+.gallery-page .g-category-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+    gap: .7rem;
+    margin-top: 1rem;
+}
+.gallery-page .g-category-card {
+    display: block;
+    width: 100%;
+    padding: .9rem 1rem;
+    border: 1px solid #dedede;
+    background: #fff;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+.gallery-page .g-category-card:hover:not(:disabled) {
+    background: #f7f7f7;
+    border-color: #b88a2b;
+    transform: translateY(-1px);
+}
+.gallery-page .g-category-card:focus-visible {
+    outline: 3px solid #d69b28;
+    outline-offset: 3px;
+}
+.gallery-page .g-category-card:disabled {
+    opacity: .55;
+    cursor: default;
+}
+.gallery-page .g-category-heading {
+    margin: 0 0 .35rem;
+    font-size: 1rem;
+}
+.gallery-page .g-category-count {
+    margin: 0;
+    color: #555;
+    font-size: .9rem;
+}
+.gallery-page .g-load-more:disabled {
+    opacity: .55;
+    cursor: default;
+}
+@media (max-width: 600px) {
+    .gallery-page .gallery-content {
+        width: 94%;
+    }
+    .gallery-page .g-preview-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: .55rem;
+    }
+    .gallery-page .g-category-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* AJUSTES FINAIS DA GALERIA UNIFICADA */
+.gallery-page.section_servicos .gallery-content > h1.titulo_servicos {
+    margin: 2rem 0 1.5rem !important;
+    padding-left: 0 !important;
+    text-indent: 0 !important;
+}
+
+/* As fotos originais do catálogo têm proporção vertical 900 x 1200. */
+.gallery-page .g-preview-grid .g-photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: contain;
+    object-position: center;
+}
