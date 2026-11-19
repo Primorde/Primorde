@@ -1,0 +1,57 @@
+.primorde-tags-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 10px;
+    margin-bottom: 6vw;
+  }
+/* Títulos H3 */
+.primorde-tags-grid h3 {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 15px;
+    background: #ffffff;
+    border: 1px solid #222222;
+    color: #171717;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    transition: background 0.2s ease,
+    color 0.2s ease;
+}
+/* Hashtag visual, fora do HTML do H3 */
+.primorde-tags-grid h3::before {
+    content: "#";
+    color: #171717;
+    font-weight: 700;
+}
+/* Efeito ao passar o mouse */
+.primorde-tags-grid h3:hover {
+    background: #171717;
+    color: #ffffff;
+}
+.primorde-tags-grid h3:hover::before {
+    color: #ffffff;
+}
+/* Responsividade */
+@media (max-width: 600px) {
+
+    .primorde-tags-section {
+        padding: 18px;
+        margin-top: 30px;
+    }
+
+    .primorde-tags-section h2 {
+        font-size: 19px;
+    }
+
+    .primorde-tags-grid {
+        gap: 8px;
+    }
+
+    .primorde-tags-grid h3 {
+        font-size: 13px;
+        padding: 9px 11px;
+    }
+}
