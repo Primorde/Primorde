@@ -580,7 +580,7 @@ button {
 }
 .gallery-page .g-category-card:hover:not(:disabled) {
     background: #f7f7f7;
-    border-color: #b88a2b;
+    border-color: black;
     transform: translateY(-1px);
 }
 .gallery-page .g-category-card:focus-visible {
